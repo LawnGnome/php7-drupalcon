@@ -1,0 +1,18 @@
+The problem
+  We all have PHP5 code bases
+  PHP 5.6 is EOL on August 28, 2017 (ono)
+  PHP 7.0 is being released in November (hopefully)
+  21 month changeover period
+  WHAT DO
+
+DON'T PANIC
+  Worst option: distros will probably support PHP5 for a while longer
+  Less worse option: do a one way, flag day migration
+  Better option: run on both for a while!
+
+Methods
+  If you don't have regression tests, start writing: it's the single best tool in your armory
+  Just running code in PHP7 (in your development environment only!) will probably give you some useful errors and warnings, but be aware of the exception/error handling changes (more on that later)
+  
+
+Breaks (and fixes)
