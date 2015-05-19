@@ -13,6 +13,12 @@ DON'T PANIC
 Methods
   If you don't have regression tests, start writing: it's the single best tool in your armory
   Just running code in PHP7 (in your development environment only!) will probably give you some useful errors and warnings, but be aware of the exception/error handling changes (more on that later)
-  
+  It's likely that tools will appear in the next few months to ease migration (I know because I'm writing one); stay on top of those
 
 Breaks (and fixes)
+  Variable handling
+    This is the big one: it's quiet and insidious
+    Indirect references have different semantics
+    Have to use curly braces to specify behaviour
+    How to detect?
+      
