@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Creepster);
 @import url(../octicons/octicons.css);
 
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-weight: bold;
+}
+
 .reveal small {
   display: block;
   font-size: 0.3em;
@@ -16,7 +20,7 @@
 
 .reveal strong {
   color: #a00;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 img {
@@ -26,4 +30,5 @@ img {
 .mega-octicon {
   font-family: octicons !important;
   font-size: 2em !important;
+  font-weight: normal !important;
 }
