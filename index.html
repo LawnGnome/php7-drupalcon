@@ -40,7 +40,7 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+				<section class="title">
           <h1>PHP 7 is <small>(almost)</small> here</h1>
           <h2 class="horror">OMG! PANIC!</h2>
           <h5>
@@ -60,7 +60,7 @@
 
         <section>
           <h2>It's faster</h2>
-          <canvas id="phpdoc-chart" width="900" height="500"></canvas>
+          <canvas id="phpdoc-chart" width="900" height="400"></canvas>
           <aside class="notes">
             Building php-doc. Never trust a benchmark you didn't fake yourself.
           </aside>
@@ -406,6 +406,91 @@ git grep -E '((((::)|(-&gt;))\$'\
         </section>
 
         <section>
+          <h2>Engine exceptions</h2>
+          <aside class="notes">
+            In PHP 5, there is a very hard line between errors and exceptions. In PHP 7, where possible, the runtime will throw exceptions for errors &mdash; including some that were previously unrecoverable.
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP 5</h2>
+          <p>
+            <code>E_ERROR</code>: 182<br>
+            <code>E_RECOVERABLE_ERROR</code>: 17<br>
+            <code>E_PARSE</code>: 1
+          </p>
+        </section>
+
+        <section>
+          <h2>PHP 7</h2>
+          <p>
+            <code>E_ERROR</code>: 54 (<span class="diff-minus">-128</span>)<br>
+            <code>E_RECOVERABLE_ERROR</code>: 3 (<span class="diff-minus">-14</span>)<br>
+            <code>E_PARSE</code>: 0 (<span class="diff-minus">-1</span>)
+          </p>
+        </section>
+
+        <section>
+          <h2>PHP 5</h2>
+          <pre><code class="nohighlight" data-trim>
+Exception
+  LogicException
+  RuntimeException
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>PHP 7</h2>
+          <pre><code class="nohighlight" data-trim>
+Throwable
+  Error
+    ParseError
+    TypeError
+  Exception
+    LogicException
+    RuntimeException
+          </code></pre>
+          <aside class="notes">
+            These names are very subject to change, and don't match what is currently in master.
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+function square(int $n): int {
+  return $n * $n;
+}
+
+square('foo');
+          </code></pre>
+          <aside class="notes">
+            Here's an example of code that will generate a TypeError.
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="nohighlight" data-trim>
+Fatal error: Uncaught TypeError:
+Argument 1 passed to square() must
+be of the type integer, string given
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+try {
+  square('foo');
+} catch (TypeError $e) {
+  // Recover gracefully.
+  // (or show a graceful error)
+}
+          </code></pre>
+          <aside class="notes">
+            Here's an example of code that will generate a TypeError.
+          </aside>
+        </section>
+
+        <section>
           <h2>Image credits</h2>
           <p><em>PHP7</em>: <a href="https://twitter.com/elroubio">Vincent Pontier</a></p>
           <p><em>Panic</em>: <a href="https://flic.kr/p/pwcRe1">wackystuff</a> (CC-BY-SA 2.0)</p>
@@ -432,6 +517,8 @@ git grep -E '((((::)|(-&gt;))\$'\
 				progress: false,
 				history: true,
 				center: true,
+        width: 1280,
+        height: 800,
 
 				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
