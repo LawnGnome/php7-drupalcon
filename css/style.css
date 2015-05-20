@@ -1,6 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Creepster);
+@import url(../octicons/octicons.css);
+
 .reveal small {
   display: block;
   font-size: 0.3em;
   letter-spacing: 0;
   vertical-align: baseline;
+}
+
+.horror {
+  color: #a00 !important;
+  font-family: Creepster, Quicksand, sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+.reveal strong {
+  color: #a00;
+  font-weight: normal;
+}
+
+img {
+  border: 0 !important;
+}
+
+.mega-octicon {
+  font-family: octicons !important;
+  font-size: 2em !important;
 }

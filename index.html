@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>PHP 7 is (almost) here</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -45,7 +45,7 @@
 			<div class="slides">
 				<section>
           <h1>PHP 7 is <small>(almost)</small> here</h1>
-          <h2>OMG! PANIC!</h2>
+          <h2 class="horror">OMG! PANIC!</h2>
           <h5>
             Adam Harvey
             <br>
@@ -54,6 +54,149 @@
             <a href="http://newrelic.com">New Relic</a>
           </h5>
 				</section>
+
+        <section data-background="images/githut.png">
+          <aside class="notes">
+            The problem: PHP (mostly 5) is popular. Really popular. 140k GitHub projects. Countless sites.
+          </aside>
+        </section>
+
+        <section>
+          <img src="images/support.png">
+          <aside class="notes">
+            PHP 5 isn't long for this world.
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP 5.6 is EOL on<br>August 28, 2017</h2>
+          <aside class="notes">
+            Or, what that really means is&hellip;
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP <strong>&lt; 7</strong> is EOL on<br>August 28, 2017</h2>
+        </section>
+
+        <section>
+          <h3>(that's in 2 years, 3 months, 7 days)</h3>
+        </section>
+
+        <section data-background="images/panic.jpg">
+        </section>
+
+        <section data-background="images/dont-panic.jpg">
+          <aside class="notes">
+            OK, so we're not flailing about any more. What should we do instead?
+          </aside>
+        </section>
+
+        <section data-background="images/head-in-sand.jpg">
+          <aside class="notes">
+            You can just rely on distribution packages to buy a few more years.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Distribution packages</h2>
+          <p>Ubuntu 14.04: PHP 5.5.9, supported to 4/2019</p>
+          <p>RHEL 7: PHP 5.4.16, supported to 6/2024</p>
+          <aside class="notes">
+            Red Hat's support runs for another nine years. Think about where you were in 2006.
+          </aside>
+        </section>
+
+        <section data-background="images/flag-day.gif">
+          <aside class="notes">
+            You can have a flag day and just change over. This doesn't work so well if you're a downstream project, though.
+          </aside>
+        </section>
+
+        <section data-background="images/dual-wield.jpg">
+          <aside class="notes">
+            Or you can dual wield PHP 5 and 7. And now I shall undermine the entire concept of this presentation.
+          </aside>
+        </section>
+
+        <section>
+          <img src="images/lorna-tweet.png">
+          <aside class="notes">
+            This is a huge advantage.
+          </aside>
+        </section>
+
+        <section>
+          <img class="stretch" src="images/python3.png">
+          <aside class="notes">
+            Python 3.0 came out six and a half years ago. Adoption has been rocky because of the difficulty in supporting both versions. PHP 7 (hopefully) won't have that problem.
+          </aside>
+        </section>
+
+        <section data-background="images/what-do.jpg">
+          <aside class="notes">
+            What do I do? That depends on who you are and what you do.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Library authors</h2>
+          <aside class="notes">
+            TELL YOUR USERS. Support both versions for a reasonable period. Document that. Tell your users more.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Library users</h2>
+          <h3>(also known as everyone)</h3>
+          <aside class="notes">
+            Look for support policies. You can either have a flag day or support both, but if you're in a team (n&gt;1) environment, the latter is better, even if it's for a shorter period.
+          </aside>
+        </section>
+
+        <section>
+          <h2>
+            <span class="mega-octicon octicon-git-pull-request"></span>
+          </h2>
+          <aside class="notes">
+            Don't be afraid of making changes to libraries to support PHP 7, but do be afraid of maintaining long lived forks. You need to get them upstream.
+          </aside>
+        </section>
+
+        <section data-background="images/strategy.jpg">
+          <aside class="notes">
+            So, how do we do this?
+          </aside>
+        </section>
+
+        <section>
+          <h2>Testing</h2>
+          <aside class="notes">
+            If you don't have regression tests, get writing. These are the single biggest weapon you have to combat BC breaks.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Tooling</h2>
+        </section>
+
+        <section>
+          <h2>Try it!</h2>
+          <aside class="notes">
+            Install PHP 7 in a development/CI environment with E_ALL. See what breaks. Rinse and repeat.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Image credits</h2>
+          <p><em>Panic</em>: <a href="https://flic.kr/p/pwcRe1">wackystuff</a> (CC-BY-SA 2.0)</p>
+          <p><em>Don't panic</em>: <a href="https://flic.kr/p/4hiM1k">Jim Linwood</a> (CC-BY-SA 2.0)</p>
+          <p><em>Head in sand</em>: <a href="https://flic.kr/p/5q67Vu">Peter</a> (CC-BY-SA 2.0)</p>
+          <p><em>Flag day</em>: <a href="https://flic.kr/p/7pvbw5">Seattle Municipal Archives</a> (CC-BY 2.0)
+          <p><em>Dual wield</em>: <a href="https://flic.kr/p/8yhodT">Joriel Jimenez</a> (CC-BY 2.0)
+          <p><em>What do?</em>: <a href="https://flic.kr/p/9fwoMs">Ian Sane</a> (CC-BY 2.0)
+          <p><em>Strategy</em>: <a href="https://flic.kr/p/7TpXix">Horia Varlan</a> (CC-BY 2.0)
+        </section>
 			</div>
 
 		</div>
@@ -66,12 +209,12 @@
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
+				controls: false,
+				progress: false,
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
