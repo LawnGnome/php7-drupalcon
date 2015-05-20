@@ -1,7 +1,8 @@
 Why PHP7?
   It's faster
   It's better
-  Apparently people really like scalar type hints
+  Apparently people really like return type declarations and scalar types
+  (Zeev covered all of this)
 
 The problem
   We all have PHP5 code bases
