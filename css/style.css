@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Creepster);
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:600&subset=latin,latin-ext);
 @import url(../octicons/octicons.css);
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
@@ -23,6 +24,12 @@
   font-weight: bold;
 }
 
+.reveal pre code {
+  font-family: "Source Code Pro", monospace;
+  font-size: 2em;
+  line-height: 1.4;
+}
+
 img {
   border: 0 !important;
 }
@@ -31,4 +38,29 @@ img {
   font-family: octicons !important;
   font-size: 2em !important;
   font-weight: normal !important;
+}
+
+/* highlight.js colouring */
+.reveal pre code,
+.hljs {
+  background: white;
+  color: #333;
+}
+
+.hljs-keyword,
+.hljs-tag,
+.hljs-request,
+.hljs-status {
+}
+
+.hljs-number,
+.hljs-date {
+}
+
+.hljs-variable {
+  color: #7f2300 !important;
+}
+
+.hljs-string {
+  color: MidnightBlue !important;
 }
