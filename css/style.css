@@ -1,9 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Amaranth:700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Creepster);
 @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:600&subset=latin,latin-ext);
 @import url(../octicons/octicons.css);
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: Amaranth, sans-serif;
   font-weight: bold;
+  letter-spacing: 0;
+}
+
+.reveal h1.lowercase, .reveal h2.lowercase, .reveal h3.lowercase, .reveal h4.lowercase, .reveal h5.lowercase, .reveal h6.lowercase {
+  text-transform: none;
 }
 
 .reveal small {
