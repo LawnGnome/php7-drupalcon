@@ -54,15 +54,30 @@
 
         <section data-background="images/php7.png">
           <aside class="notes">
-            Why PHP 7?
+            As Zeev talked about yesterday, there are many reasons why you might want to move to PHP 7.
           </aside>
         </section>
 
-        <!-- TODO: performance, better, scalar type hints -->
+        <section>
+          <h2>It's faster</h2>
+          <canvas id="phpdoc-chart" width="900" height="500"></canvas>
+          <aside class="notes">
+            Building php-doc. Never trust a benchmark you didn't fake yourself.
+          </aside>
+        </section>
+
+        <section data-background="images/rfc.png">
+          <h2>It's better</h2>
+          <p>43 RFCs</p>
+          <p>9,054 commits (and counting)</p>
+          <aside class="notes">
+            Features! Features! Features!
+          </aside>
+        </section>
 
         <section data-background="images/githut.png">
           <aside class="notes">
-            The problem: PHP (mostly 5) is popular. Really popular. 140k GitHub projects. Countless sites.
+            If that was the carrot, here's the stick. We have a problem: PHP (mostly 5) is popular. Really popular. 140k GitHub projects. Countless sites.
           </aside>
         </section>
 
@@ -175,9 +190,10 @@
         </section>
 
         <section>
+          <!-- TODO: background image of code coverage -->
           <h2>Testing</h2>
           <aside class="notes">
-            If you don't have regression tests, get writing. These are the single biggest weapon you have to combat BC breaks.
+            If you don't have regression tests, get writing. These are the single biggest weapon you have to combat BC breaks. Code coverage and Derick and Sebastian's newly implemented branch coverage stats will help guide you in terms of whether you're testing enough.
           </aside>
         </section>
 
@@ -186,10 +202,37 @@
         </section>
 
         <section>
+          <!-- TODO: background image of PHPUnit failures -->
           <h2>Try it!</h2>
           <aside class="notes">
             Install PHP 7 in a development/CI environment with E_ALL. See what breaks. Rinse and repeat.
           </aside>
+        </section>
+
+        <section data-background="images/broken.jpg">
+          <aside class="notes">
+            What's broken? (and how do we fix them)
+          </aside>
+        </section>
+
+        <section>
+          <h2>Variable handling</h2>
+          <aside class="notes">
+            This sounds bad. It's both better and worse than you think.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Indirect references</h2>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+$$foo['bar']['baz']
+$foo-&gt;$bar['baz']
+$foo-&gt;$bar['baz']()
+Foo::$bar['baz']()
+          </code></pre>
         </section>
 
         <section>
@@ -234,6 +277,33 @@
 			});
 
 		</script>
+
+    <script src="js/Chart.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var ctx = document.getElementById("phpdoc-chart").getContext("2d");
+        var chart = new Chart(ctx).Bar(
+          {
+            labels: ["5.3", "5.4", "5.5", "5.6", "7.0"],
+            datasets: [
+              {
+                data: [36.875, 28.123, 26.384, 25.336, 19.728]
+              }
+            ]
+          },
+          {
+            responsive: true,
+            scaleFontColor: "#333",
+            scaleFontFamily: "'Open Sans'",
+            scaleFontSize: 40,
+            scaleLabel: " <%=value%>",
+            scaleShowHorizontalLines: false,
+            scaleShowVerticalLines: false,
+          }
+        );
+      });
+    </script>
+
 
 	</body>
 </html>
