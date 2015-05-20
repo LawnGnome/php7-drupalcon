@@ -101,6 +101,9 @@
 
         <section>
           <h3>(that's in 2 years, 3 months, 7 days)</h3>
+          <aside class="notes">
+            That's your changeover period. You <em>have</em> to support PHP 7 by the end of that period. Probably much sooner than that.
+          </aside>
         </section>
 
         <section data-background="images/panic.jpg">
@@ -233,6 +236,173 @@ $foo-&gt;$bar['baz']
 $foo-&gt;$bar['baz']()
 Foo::$bar['baz']()
           </code></pre>
+          <aside class="notes">
+            These have all changed behaviour in PHP 7. Silently. Insidiously. I'll break these down one at a time in a minute, but first&hellip;
+          </aside>
+        </section>
+
+        <section>
+          <h2>Why?</h2>
+          <aside class="notes">
+            &hellip;why are we inflicting this pain upon you, the developer?
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+$foo()['bar']()
+$foo::$bar::$baz
+Foo::bar()()
+(function() { ... })()
+($obj-&gt;closure)()
+[$obj, 'method']()
+          </code></pre>
+          <aside class="notes">
+            These &mdash; and many other variations &mdash; are now supported in PHP 7.0. Check the uniform variable syntax RFC.
+          </aside>
+        </section>
+
+        <section>
+          <img class="stretch hide-border" src="images/awesome.png">
+          <aside class="notes">
+            Obviously, this is awesome. But the pain.
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+$$foo['bar']['baz'];
+          </code></pre>
+          <h3>in PHP 5:</h3>
+          <pre><code class="php" data-trim>
+${$foo['bar']['baz']};
+          </code></pre>
+          <aside class="notes">
+            This is interpreted in PHP 5 as "take the value of $foo['bar']['baz'] and use that as a variable name". (Of course, if you're using variable variables anyway, you have already lost.)
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+$$foo['bar']['baz'];
+          </code></pre>
+          <h3>in PHP 7:</h3>
+          <pre><code class="php" data-trim>
+($$foo)['bar']['baz'];
+          </code></pre>
+          <aside class="notes">
+            PHP 7: take the value of $foo, use that as a variable name, and then access ['bar']['baz'].
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+$foo-&gt;$bar['baz']
+          </code></pre>
+          <h3>in PHP 5:</h3>
+          <pre><code class="php" data-trim>
+$foo-&gt;{$bar['baz']}
+          </code></pre>
+          <aside class="notes">
+            This is interpreted in PHP 5 as "take the value of $bar['baz'], and use that as a property name".
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+$foo-&gt;$bar['baz']
+          </code></pre>
+          <h3>in PHP 7:</h3>
+          <pre><code class="php" data-trim>
+($foo-&gt;$bar)['baz']
+          </code></pre>
+          <aside class="notes">
+            PHP 7: take the value of $foo-&gt;bar, and then access the baz variable. There's also the same thing for method calls (which was the third variation shown earlier).
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+Foo::$bar['baz']()
+          </code></pre>
+          <h3>in PHP 5:</h3>
+          <pre><code class="php" data-trim>
+Foo::{$bar['baz']}()
+          </code></pre>
+          <aside class="notes">
+            This is interpreted in PHP 5 as "take the value of $bar['baz'], and use that as a static property name". This is probably the most common variant of the four.
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+Foo::$bar['baz']()
+          </code></pre>
+          <h3>in PHP 7:</h3>
+          <pre><code class="php" data-trim>
+(Foo::$bar)['baz']()
+          </code></pre>
+          <aside class="notes">
+            PHP 7: Take the value of the static $bar property of Foo, then get the array value, then call that callable.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Finding instances</h2>
+        </section>
+
+        <section>
+          <h2 class="lowercase">IDEs</h2>
+        </section>
+
+        <section>
+          <pre><code class="bash" data-trim>
+git grep -E '((((::)|(-&gt;))\$'\
+  '[a-zA-Z_][a-zA-Z0-9_]*)+'\
+  '\[[^\s]+\]\())|(-&gt;\$[a-zA-Z_]'\
+  '[a-zA-Z0-9_]*\[)|'\
+  '(\$\$[a-zA-Z_][a-zA-Z0-9_]*\[)'
+          </code></pre>
+          <aside class="notes">
+            I'll tweet this later. This isn't perfect (doesn't support non-ASCII variable names), but will probably catch most sins.
+          </aside>
+        </section>
+
+        <section>
+          <h2>What do you do?</h2>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+Foo::$bar['baz']()
+          </code></pre>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+Foo::$bar['baz']()
+          </code></pre>
+          <h3>Using curly braces:</h3>
+          <pre><code class="php" data-trim>
+Foo::{$bar['baz']}()
+          </code></pre>
+          <aside class="notes">
+            The earlier examples with parentheses and/or curly braces will work for preserving PHP 5 behaviour.
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+Foo::$bar['baz']()
+          </code></pre>
+          <h3>Break it down:</h3>
+          <pre><code class="php" data-trim>
+$method = $bar['baz'];
+Foo::$method();
+          </code></pre>
+          <aside class="notes">
+            I'd prefer this for clarity.
+          </aside>
         </section>
 
         <section>

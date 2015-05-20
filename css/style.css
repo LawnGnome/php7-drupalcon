@@ -41,6 +41,10 @@ img {
   border: 0 !important;
 }
 
+.reveal img.hide-border {
+  box-shadow: none;
+}
+
 .mega-octicon {
   font-family: octicons !important;
   font-size: 2em !important;
@@ -58,6 +62,7 @@ img {
 .hljs-tag,
 .hljs-request,
 .hljs-status {
+  color: #4f007f !important;
 }
 
 .hljs-number,
@@ -65,9 +70,9 @@ img {
 }
 
 .hljs-variable {
-  color: #7f2300 !important;
+  color: #5f1300 !important;
 }
 
 .hljs-string {
-  color: MidnightBlue !important;
+  color: #00237f !important;
 }
