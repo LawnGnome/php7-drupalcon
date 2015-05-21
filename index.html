@@ -577,7 +577,7 @@ try {
           </section>
 
           <section>
-            <p><code>set_exception_handler</code></p>
+            <h2><code>set_exception_handler</code></h2>
             <aside class="notes">
               If you leave your existing Pokemon handlers alone, you can use set_exception_handler much as you used set_error_handler in PHP 5.
             </aside>
@@ -593,11 +593,11 @@ try {
               </defs>
 
               <text x="20" y="100">Errors</text>
-              <line class="arrow" x1="300" y1="80" x2="500" y2="80" />
+              <line class="arrow" x1="300" y1="80" x2="430" y2="80" />
               <text x="1080" y="100" class="code" text-anchor="end">set_error_handler</text>
               <text x="20" y="200">Exceptions</text>
-              <line class="arrow" x1="300" y1="180" x2="500" y2="180" />
-              <text x="1080" y="200" class="code" text-anchor="end">catch</text>
+              <line class="arrow" x1="300" y1="180" x2="430" y2="180" />
+              <text x="1080" y="200" class="code" text-anchor="end">catch (Exception $e)</text>
             </svg>
             <aside class="notes">
               Here's how I'd do it. You can use a top level catch, of course, but the key is that you're not using set_exception_handler in PHP 5.
@@ -622,10 +622,24 @@ try {
               <text x="1080" y="300" class="code" text-anchor="end">set_exception_handler</text>
               <text x="70" y="380" class="code">Exception</text>
               <line class="arrow" x1="350" y1="360" x2="400" y2="360" />
-              <text x="1080" y="380" class="code" text-anchor="end">catch</text>
+              <text x="1080" y="380" class="code" text-anchor="end">catch (Exception $e)</text>
             </svg>
             <aside class="notes">
               The callback you register with set_exception_handler will presumably do similar things to set_error_handler.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+try {
+  $code = '&lt;?php echo 01090; ?&gt;';
+  highlight_string($code);
+} catch (ParseError $e) {
+  ...
+}
+            </code></pre>
+            <aside class="notes">
+              Rules are made to be broken, of course, and there may be times where you do have to catch errors. If you were already handling a recoverable error, you will probably have to include a catch block to match. But at least it's now close to the code.
             </aside>
           </section>
 
@@ -688,6 +702,9 @@ set_exception_handler('log_exc');
 
           <section>
             <h3>(there are two)</h3>
+            <aside class="notes">
+              These aren't that bad, and they're off in the weeds of what you'd really consider undefined behaviour, but since people probably rely on them&hellip;
+            </aside>
           </section>
 
           <section>
@@ -702,6 +719,9 @@ foreach ($a as &amp;$v) {
             <pre><code class="nohighlight" data-trim>
 int(1)
             </code></pre>
+            <aside class="notes">
+              What happens when we modify an array that's being iterated over in a by reference foreach?
+            </aside>
           </section>
 
           <section>
@@ -775,7 +795,7 @@ int(1)
           </section>
 
           <section>
-            <h2>Don't use the old array functions</h2>
+            <h2>Don't use the old array iteration functions</h2>
             <aside class="notes">
               This is probably good advice in general.
             </aside>
@@ -999,7 +1019,9 @@ yield $foo or $bar;
           <section>
             <pre><code class="php" data-trim>
 $a = ['o', 'O'];
-sort($a, SORT_STRING|SORT_FLAG_CASE);
+$opt = SORT_STRING|SORT_FLAG_CASE;
+sort($a, $opt);
+
 echo json_encode($a);
             </code></pre>
             <h3>in PHP 5:</h3>
@@ -1014,7 +1036,9 @@ echo json_encode($a);
           <section>
             <pre><code class="php" data-trim>
 $a = ['o', 'O'];
-sort($a, SORT_STRING|SORT_FLAG_CASE);
+$opt = SORT_STRING|SORT_FLAG_CASE;
+sort($a, $opt);
+
 echo json_encode($a);
             </code></pre>
             <h3>in PHP 7:</h3>
@@ -1091,7 +1115,7 @@ DateTime::__construct(): It is not safe to rely on the system's timezone setting
               <code>numeric</code>
             </p>
             <aside class="notes">
-              These are the names that are now unavailable to classes, interfaces and traits, as they're used for scalar type declarations. Remember that these names are case insensitive. I'd avoid "scalar" and "void", too.
+              These are the names that are now unavailable to classes, interfaces and traits, as they're used for scalar type declarations. This includes classes in namespaces. Remember that these names are case insensitive. I'd avoid "scalar" and "void", too.
             </aside>
           </section>
 
