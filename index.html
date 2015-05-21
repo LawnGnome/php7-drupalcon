@@ -702,8 +702,6 @@ int(1)
 int(1)
 int(1)
           </code></pre>
-          <aside class="notes">
-          </aside>
         </section>
 
         <section>
@@ -725,6 +723,16 @@ git grep -E 'foreach.*\sas\s+&amp;'
 
         <section>
           <h2>Use <code>array_walk</code> or <code>array_map</code></h2>
+          <pre><code class="php" data-trim>
+array_walk($a, function (&amp;$v, $k) {
+  ...
+});
+          </code></pre>
+          <pre><code class="php" data-trim>
+$a = array_map(function ($v) {
+  ...
+}, $a);
+          </code></pre>
           <aside class="notes">
             If you're not actually adding or removing elements, then use a function that isolates the scope. One of PHP's most commonly reported "bugs" is loop variables causing weirdness later, and you can remove that (and simulate lexical scope).
           </aside>
@@ -734,6 +742,8 @@ git grep -E 'foreach.*\sas\s+&amp;'
           <h2>Refactor</h2>
           <aside class="notes">
             If you have to add or remove elements within the loop: you're going to have to figure out how not to, otherwise you're going to get inconsistent behaviour.
+            (End of section.)
+          </aside>
         </section>
 
         <section>
