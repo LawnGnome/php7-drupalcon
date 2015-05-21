@@ -43,13 +43,13 @@
 				<section class="title">
           <h1>PHP 7 is <small>(almost)</small> here</h1>
           <h2 class="horror">OMG! PANIC!</h2>
-          <h5>
+          <h3>
             Adam Harvey
             <br>
             <a href="https://twitter.com/LGnome">@LGnome</a>
             <br>
             <a href="http://newrelic.com">New Relic</a>
-          </h5>
+          </h3>
 				</section>
 
         <section data-background="images/php7.png">
@@ -132,7 +132,7 @@
 
         <section data-background="images/flag-day.gif">
           <aside class="notes">
-            You can have a flag day and just change over. This doesn't work so well if you're a downstream project, though.
+            You can have a flag day and just change over. This doesn't work so well if you're an upstream project like a library or framework, though.
           </aside>
         </section>
 
@@ -158,7 +158,7 @@
 
         <section data-background="images/what-do.jpg">
           <aside class="notes">
-            What do I do? That depends on who you are and what you do.
+            What do you do? That depends on who you are and what you do.
           </aside>
         </section>
 
@@ -402,6 +402,7 @@ git grep -E '((((::)|(-&gt;))\$'\
           </code></pre>
           <aside class="notes">
             I'll tweet this later. This isn't perfect (doesn't support non-ASCII variable names), but will probably catch most sins.
+            (end of section)
           </aside>
         </section>
 
@@ -538,7 +539,7 @@ try {
             <text x="1080" y="200" class="code" text-anchor="end">catch</text>
           </svg>
           <aside class="notes">
-            You can use a top level catch, of course.
+            Here's how I'd do it. You can use a top level catch, of course, but the key is that you're not using set_exception_handler in PHP 5.
           </aside>
         </section>
 
@@ -562,6 +563,48 @@ try {
             <line class="arrow" x1="350" y1="360" x2="400" y2="360" />
             <text x="1080" y="380" class="code" text-anchor="end">catch</text>
           </svg>
+          <aside class="notes">
+            The callback you register with set_exception_handler will presumably do similar things to set_error_handler.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Today</h2>
+          <pre><code class="php" data-trim>
+function log_exc(Exception $e) {
+  ...
+}
+
+set_exception_handler('log_exc');
+          </code></pre>
+          <aside class="notes">
+            There's an additional wrinkle. Most of you probably have (or at least use) code something like this. There's a problem (type hint).
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP 7 only</h2>
+          <pre><code class="php" data-trim>
+function log_exc(Throwable $e) {
+  ...
+}
+
+set_exception_handler('log_exc');
+          </code></pre>
+          <aside class="notes">
+            If you're writing PHP 7 only code, then you can simply replace the type hint with Throwable (or whatever it's called).
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP 5 and 7</h2>
+          <pre><code class="php" data-trim>
+function log_exc($e) {
+  ...
+}
+
+set_exception_handler('log_exc');
+          </code></pre>
         </section>
 
         <section>
