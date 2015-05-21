@@ -69,6 +69,11 @@ img {
   color: #700;
 }
 
+.wrap {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 /* highlight.js colouring */
 .reveal pre code,
 .hljs {
@@ -89,6 +94,7 @@ img {
 
 .hljs-number,
 .hljs-date {
+  color: #00135f !important;
 }
 
 .hljs-variable {
