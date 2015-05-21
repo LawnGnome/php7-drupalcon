@@ -431,31 +431,6 @@ git grep -E '((((::)|(-&gt;))\$'\
         </section>
 
         <section>
-          <h2>PHP 5</h2>
-          <pre><code class="nohighlight" data-trim>
-Exception
-  LogicException
-  RuntimeException
-          </code></pre>
-        </section>
-
-        <section>
-          <h2>PHP 7</h2>
-          <pre><code class="nohighlight" data-trim>
-Throwable
-  Error
-    ParseError
-    TypeError
-  Exception
-    LogicException
-    RuntimeException
-          </code></pre>
-          <aside class="notes">
-            These names are very subject to change, and don't match what is currently in master.
-          </aside>
-        </section>
-
-        <section>
           <pre><code class="php" data-trim>
 function square(int $n): int {
   return $n * $n;
@@ -486,8 +461,107 @@ try {
 }
           </code></pre>
           <aside class="notes">
-            Here's an example of code that will generate a TypeError.
+            You can catch these error exceptions like any other exception.
           </aside>
+        </section>
+
+        <section>
+          <h2>PHP 5</h2>
+          <pre><code class="nohighlight" data-trim>
+Exception
+  LogicException
+  RuntimeException
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>PHP 7</h2>
+          <pre><code class="nohighlight" data-trim>
+Throwable
+  Error
+    ParseError
+    TypeError
+  Exception
+    LogicException
+    RuntimeException
+          </code></pre>
+          <aside class="notes">
+            These names are very subject to change, and don't match what is currently in master.
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+try {
+  ...
+} catch (Exception $e) {
+  // Catch almost everything?
+}
+          </code></pre>
+          <aside class="notes">
+            What this means is that catch-all exception blocks no longer catch all exceptions (Pokemon-style), but this is a good thing, since the new exceptions aren't user generated and probably not what you expected to catch.
+          </aside>
+        </section>
+
+        <section>
+          <pre><code class="php" data-trim>
+try {
+  ...
+} catch (Throwable $e) {
+  // Catch everything, but is
+  // that a good idea?
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <p><code>set_exception_handler</code></p>
+          <aside class="notes">
+            If you leave your existing Pokemon handlers alone, you can use set_exception_handler much as you used set_error_handler in PHP 5.
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP 5</h2>
+          <svg class="flowchart" width="1100" height="300">
+            <defs>
+              <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
+                <path d="M0,0 L4,2 0,4" />
+              </marker>
+            </defs>
+
+            <text x="20" y="100">Errors</text>
+            <line class="arrow" x1="300" y1="80" x2="500" y2="80" />
+            <text x="1080" y="100" class="code" text-anchor="end">set_error_handler</text>
+            <text x="20" y="200">Exceptions</text>
+            <line class="arrow" x1="300" y1="180" x2="500" y2="180" />
+            <text x="1080" y="200" class="code" text-anchor="end">catch</text>
+          </svg>
+          <aside class="notes">
+            You can use a top level catch, of course.
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP 7</h2>
+          <svg class="flowchart" width="1100" height="400">
+            <defs>
+              <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
+                <path d="M0,0 L4,2 0,4" />
+              </marker>
+            </defs>
+
+            <text x="20" y="100">Errors</text>
+            <line class="arrow" x1="350" y1="80" x2="400" y2="80" />
+            <text x="1080" y="100" class="code" text-anchor="end">set_error_handler</text>
+            <text x="20" y="220">Exceptions</text>
+            <text x="70" y="300" class="code">Error</text>
+            <line class="arrow" x1="350" y1="280" x2="400" y2="280" />
+            <text x="1080" y="300" class="code" text-anchor="end">set_exception_handler</text>
+            <text x="70" y="380" class="code">Exception</text>
+            <line class="arrow" x1="350" y1="360" x2="400" y2="360" />
+            <text x="1080" y="380" class="code" text-anchor="end">catch</text>
+          </svg>
         </section>
 
         <section>

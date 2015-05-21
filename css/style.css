@@ -97,3 +97,23 @@ img {
 .hljs-title {
   color: #00237f !important;
 }
+
+/* svg */
+.flowchart line {
+  stroke: black;
+  stroke-width: 10px;
+}
+
+.flowchart line.arrow {
+  marker-end: url(#arrowhead);
+}
+
+.flowchart text {
+  fill: black;
+  stroke: none;
+}
+
+.flowchart text.code {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 600;
+}
