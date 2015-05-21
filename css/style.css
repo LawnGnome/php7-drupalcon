@@ -18,6 +18,10 @@
   text-transform: none;
 }
 
+.reveal a {
+  color: #1F4159;
+}
+
 .reveal small {
   display: block;
   font-size: 0.3em;
@@ -39,6 +43,7 @@
 .reveal code {
   font-family: "Source Code Pro", monospace;
   font-weight: 600;
+  text-transform: none !important;
 }
 
 .reveal pre code {
@@ -70,6 +75,11 @@ img {
 .wrap {
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.reveal .image p {
+  font-size: 0.7em;
+  margin: 0.2em 0;
 }
 
 /* highlight.js colouring */

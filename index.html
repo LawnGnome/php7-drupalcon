@@ -53,428 +53,441 @@
           </h3>
 				</section>
 
-        <section data-background="images/php7.png">
-          <aside class="notes">
-            As Zeev talked about yesterday, there are many reasons why you might want to move to PHP 7.
-          </aside>
+        <section>
+          <section data-background="images/php7.png">
+            <aside class="notes">
+              As Zeev talked about yesterday, there are many reasons why you might want to move to PHP 7.
+            </aside>
+          </section>
+
+          <section>
+            <h2>It's faster</h2>
+            <canvas id="phpdoc-chart" width="900" height="400"></canvas>
+            <aside class="notes">
+              Building php-doc. Never trust a benchmark you didn't fake yourself.
+            </aside>
+          </section>
+
+          <section data-background="images/rfc.png">
+            <h2>It's better</h2>
+            <p>43 RFCs</p>
+            <p>9,054 commits (and counting)</p>
+            <aside class="notes">
+              Features! Features! Features!
+            </aside>
+          </section>
         </section>
 
         <section>
-          <h2>It's faster</h2>
-          <canvas id="phpdoc-chart" width="900" height="400"></canvas>
-          <aside class="notes">
-            Building php-doc. Never trust a benchmark you didn't fake yourself.
-          </aside>
-        </section>
+          <section data-background="images/githut.png">
+            <aside class="notes">
+              If that was the carrot, here's the stick. We have a problem: PHP (mostly 5) is popular. Really popular. 140k GitHub projects. Countless sites.
+            </aside>
+          </section>
 
-        <section data-background="images/rfc.png">
-          <h2>It's better</h2>
-          <p>43 RFCs</p>
-          <p>9,054 commits (and counting)</p>
-          <aside class="notes">
-            Features! Features! Features!
-          </aside>
-        </section>
+          <section>
+            <img src="images/support.png">
+            <aside class="notes">
+              PHP 5 isn't long for this world.
+            </aside>
+          </section>
 
-        <section data-background="images/githut.png">
-          <aside class="notes">
-            If that was the carrot, here's the stick. We have a problem: PHP (mostly 5) is popular. Really popular. 140k GitHub projects. Countless sites.
-          </aside>
-        </section>
+          <section>
+            <h2>PHP 5.6 is EOL on<br>August 28, 2017</h2>
+            <aside class="notes">
+              Or, what that really means is&hellip;
+            </aside>
+          </section>
 
-        <section>
-          <img src="images/support.png">
-          <aside class="notes">
-            PHP 5 isn't long for this world.
-          </aside>
-        </section>
+          <section>
+            <h2>PHP <strong>&lt; 7</strong> is EOL on<br>August 28, 2017</h2>
+          </section>
 
-        <section>
-          <h2>PHP 5.6 is EOL on<br>August 28, 2017</h2>
-          <aside class="notes">
-            Or, what that really means is&hellip;
-          </aside>
-        </section>
-
-        <section>
-          <h2>PHP <strong>&lt; 7</strong> is EOL on<br>August 28, 2017</h2>
-        </section>
-
-        <section>
-          <h3>(that's in 2 years, 3 months, 7 days)</h3>
-          <aside class="notes">
-            That's your changeover period. You <em>have</em> to support PHP 7 by the end of that period. Probably much sooner than that.
-          </aside>
+          <section>
+            <h3>(that's in 2 years, 3 months, 7 days)</h3>
+            <aside class="notes">
+              That's your changeover period. You <em>have</em> to support PHP 7 by the end of that period. Probably much sooner than that.
+            </aside>
+          </section>
         </section>
 
         <section data-background="images/panic.jpg">
         </section>
 
-        <section data-background="images/dont-panic.jpg">
-          <aside class="notes">
-            OK, so we're not flailing about any more. What should we do instead?
-          </aside>
-        </section>
+        <section>
+          <section data-background="images/dont-panic.jpg">
+            <aside class="notes">
+              OK, so we're not flailing about any more. What should we do instead?
+            </aside>
+          </section>
 
-        <section data-background="images/head-in-sand.jpg">
-          <aside class="notes">
-            You can just rely on distribution packages to buy a few more years.
-          </aside>
+          <section data-background="images/head-in-sand.jpg">
+            <aside class="notes">
+              You can just rely on distribution packages to buy a few more years.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Distribution packages</h2>
+            <p>Ubuntu 14.04: PHP 5.5.9, supported to 4/2019</p>
+            <p>RHEL 7: PHP 5.4.16, supported to 6/2024</p>
+            <aside class="notes">
+              Red Hat's support runs for another nine years. Think about where you were in 2006.
+            </aside>
+          </section>
+
+          <section data-background="images/flag-day.gif">
+            <aside class="notes">
+              You can have a flag day and just change over. This doesn't work so well if you're an upstream project like a library or framework, though.
+            </aside>
+          </section>
+
+          <section data-background="images/dual-wield.jpg">
+            <aside class="notes">
+              Or you can dual wield PHP 5 and 7. And now I shall undermine the entire concept of this presentation.
+            </aside>
+          </section>
+
+          <section>
+            <img src="images/lorna-tweet.png">
+            <aside class="notes">
+              This is a huge advantage.
+            </aside>
+          </section>
+
+          <section>
+            <img class="stretch" src="images/python3.png">
+            <aside class="notes">
+              Python 3.0 came out six and a half years ago. Adoption has been rocky because of the difficulty in supporting both versions. PHP 7 (hopefully) won't have that problem.
+            </aside>
+          </section>
         </section>
 
         <section>
-          <h2>Distribution packages</h2>
-          <p>Ubuntu 14.04: PHP 5.5.9, supported to 4/2019</p>
-          <p>RHEL 7: PHP 5.4.16, supported to 6/2024</p>
-          <aside class="notes">
-            Red Hat's support runs for another nine years. Think about where you were in 2006.
-          </aside>
-        </section>
+          <section data-background="images/what-do.jpg">
+            <aside class="notes">
+              That's what you can do. What option should you choose? That depends on who you are and what you do.
+            </aside>
+          </section>
 
-        <section data-background="images/flag-day.gif">
-          <aside class="notes">
-            You can have a flag day and just change over. This doesn't work so well if you're an upstream project like a library or framework, though.
-          </aside>
-        </section>
+          <section>
+            <h2>Library authors</h2>
+            <aside class="notes">
+              TELL YOUR USERS. Support both versions for a reasonable period. Document that. Tell your users more.
+            </aside>
+          </section>
 
-        <section data-background="images/dual-wield.jpg">
-          <aside class="notes">
-            Or you can dual wield PHP 5 and 7. And now I shall undermine the entire concept of this presentation.
-          </aside>
-        </section>
+          <section>
+            <h2>Library users</h2>
+            <h3>(also known as everyone)</h3>
+            <aside class="notes">
+              Look for support policies. You can either have a flag day or support both, but if you're in a team (n&gt;1) environment, the latter is better, even if it's for a shorter period.
+            </aside>
+          </section>
 
-        <section>
-          <img src="images/lorna-tweet.png">
-          <aside class="notes">
-            This is a huge advantage.
-          </aside>
-        </section>
-
-        <section>
-          <img class="stretch" src="images/python3.png">
-          <aside class="notes">
-            Python 3.0 came out six and a half years ago. Adoption has been rocky because of the difficulty in supporting both versions. PHP 7 (hopefully) won't have that problem.
-          </aside>
-        </section>
-
-        <section data-background="images/what-do.jpg">
-          <aside class="notes">
-            What do you do? That depends on who you are and what you do.
-          </aside>
+          <section>
+            <h2>
+              <span class="mega-octicon octicon-git-pull-request"></span>
+            </h2>
+            <aside class="notes">
+              Don't be afraid of making changes to libraries to support PHP 7, but do be afraid of maintaining long lived forks. You need to get them upstream.
+            </aside>
+          </section>
         </section>
 
         <section>
-          <h2>Library authors</h2>
-          <aside class="notes">
-            TELL YOUR USERS. Support both versions for a reasonable period. Document that. Tell your users more.
-          </aside>
-        </section>
+          <section data-background="images/strategy.jpg">
+            <aside class="notes">
+              So, how do we do this?
+            </aside>
+          </section>
 
-        <section>
-          <h2>Library users</h2>
-          <h3>(also known as everyone)</h3>
-          <aside class="notes">
-            Look for support policies. You can either have a flag day or support both, but if you're in a team (n&gt;1) environment, the latter is better, even if it's for a shorter period.
-          </aside>
-        </section>
+          <section>
+            <!-- TODO: background image of code coverage -->
+            <h2>Testing</h2>
+            <aside class="notes">
+              If you don't have regression tests, get writing. These are the single biggest weapon you have to combat BC breaks. Code coverage and Derick and Sebastian's newly implemented branch coverage stats will help guide you in terms of whether you're testing enough.
+            </aside>
+          </section>
 
-        <section>
-          <h2>
-            <span class="mega-octicon octicon-git-pull-request"></span>
-          </h2>
-          <aside class="notes">
-            Don't be afraid of making changes to libraries to support PHP 7, but do be afraid of maintaining long lived forks. You need to get them upstream.
-          </aside>
-        </section>
+          <section>
+            <h2>Tooling</h2>
+          </section>
 
-        <section data-background="images/strategy.jpg">
-          <aside class="notes">
-            So, how do we do this?
-          </aside>
-        </section>
-
-        <section>
-          <!-- TODO: background image of code coverage -->
-          <h2>Testing</h2>
-          <aside class="notes">
-            If you don't have regression tests, get writing. These are the single biggest weapon you have to combat BC breaks. Code coverage and Derick and Sebastian's newly implemented branch coverage stats will help guide you in terms of whether you're testing enough.
-          </aside>
-        </section>
-
-        <section>
-          <h2>Tooling</h2>
-        </section>
-
-        <section>
-          <!-- TODO: background image of PHPUnit failures -->
-          <h2>Try it!</h2>
-          <aside class="notes">
-            Install PHP 7 in a development/CI environment with E_ALL. See what breaks. Rinse and repeat.
-          </aside>
+          <section>
+            <!-- TODO: background image of PHPUnit failures -->
+            <h2>Try it!</h2>
+            <aside class="notes">
+              Install PHP 7 in a development/CI environment with E_ALL. See what breaks. Rinse and repeat.
+            </aside>
+          </section>
         </section>
 
         <section data-background="images/broken.jpg">
           <aside class="notes">
-            What's broken? (and how do we fix them)
+            What's broken? (and how do we find them and fix them so they'll work on PHP 7, or preferably both)
           </aside>
         </section>
 
         <section>
-          <h2>Variable handling</h2>
-          <aside class="notes">
-            This sounds bad. It's both better and worse than you think.
-          </aside>
-        </section>
+          <section>
+            <h2>Variable handling</h2>
+            <aside class="notes">
+              This sounds bad. It's both better and worse than you think.
+            </aside>
+          </section>
 
-        <section>
-          <h2>Indirect references</h2>
-        </section>
+          <section>
+            <h2>Indirect references</h2>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $$foo['bar']['baz']
 $foo-&gt;$bar['baz']
 $foo-&gt;$bar['baz']()
 Foo::$bar['baz']()
-          </code></pre>
-          <aside class="notes">
-            These have all changed behaviour in PHP 7. Silently. Insidiously. I'll break these down one at a time in a minute, but first&hellip;
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              These have all changed behaviour in PHP 7. Silently. Insidiously. I'll break these down one at a time in a minute, but first&hellip;
+            </aside>
+          </section>
 
-        <section>
-          <h2>Why?</h2>
-          <aside class="notes">
-            &hellip;why are we inflicting this pain upon you, the developer?
-          </aside>
-        </section>
+          <section>
+            <h2>Why?</h2>
+            <aside class="notes">
+              &hellip;why are we inflicting this pain upon you, the developer?
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $foo()['bar']()
 $foo::$bar::$baz
 Foo::bar()()
 (function() { ... })()
 ($obj-&gt;closure)()
 [$obj, 'method']()
-          </code></pre>
-          <aside class="notes">
-            These &mdash; and many other variations &mdash; are now supported in PHP 7.0. Check the uniform variable syntax RFC.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              These &mdash; and many other variations &mdash; are now supported in PHP 7.0. Check the uniform variable syntax RFC.
+            </aside>
+          </section>
 
-        <section>
-          <img class="stretch hide-border" src="images/awesome.png">
-          <aside class="notes">
-            Obviously, this is awesome. But the pain. On the bright side, this is one of those things that's really rare: when Nikita was working on this, he only found one instance in all of Symfony and Zend Framework where this mattered.
-          </aside>
-        </section>
+          <section>
+            <img class="stretch hide-border" src="images/awesome.png">
+            <aside class="notes">
+              Obviously, this is awesome. But the pain. On the bright side, this is one of those things that's really rare: when Nikita was working on this, he only found one instance in all of Symfony and Zend Framework where this mattered.
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $$foo['bar']['baz'];
-          </code></pre>
-          <h3>in PHP 5:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>in PHP 5:</h3>
+            <pre><code class="php" data-trim>
 ${$foo['bar']['baz']};
-          </code></pre>
-          <aside class="notes">
-            This is interpreted in PHP 5 as "take the value of $foo['bar']['baz'] and use that as a variable name". (Of course, if you're using variable variables anyway, you have already lost.)
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              This is interpreted in PHP 5 as "take the value of $foo['bar']['baz'] and use that as a variable name". (Of course, if you're using variable variables anyway, you have already lost.)
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $$foo['bar']['baz'];
-          </code></pre>
-          <h3>in PHP 7:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>in PHP 7:</h3>
+            <pre><code class="php" data-trim>
 ($$foo)['bar']['baz'];
-          </code></pre>
-          <aside class="notes">
-            PHP 7: take the value of $foo, use that as a variable name, and then access ['bar']['baz'].
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              PHP 7: take the value of $foo, use that as a variable name, and then access ['bar']['baz'].
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $foo-&gt;$bar['baz']
-          </code></pre>
-          <h3>in PHP 5:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>in PHP 5:</h3>
+            <pre><code class="php" data-trim>
 $foo-&gt;{$bar['baz']}
-          </code></pre>
-          <aside class="notes">
-            This is interpreted in PHP 5 as "take the value of $bar['baz'], and use that as a property name".
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              This is interpreted in PHP 5 as "take the value of $bar['baz'], and use that as a property name".
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $foo-&gt;$bar['baz']
-          </code></pre>
-          <h3>in PHP 7:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>in PHP 7:</h3>
+            <pre><code class="php" data-trim>
 ($foo-&gt;$bar)['baz']
-          </code></pre>
-          <aside class="notes">
-            PHP 7: take the value of $foo-&gt;bar, and then access the baz variable. There's also the same thing for method calls (which was the third variation shown earlier).
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              PHP 7: take the value of $foo-&gt;bar, and then access the baz variable. There's also the same thing for method calls (which was the third variation shown earlier).
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 Foo::$bar['baz']()
-          </code></pre>
-          <h3>in PHP 5:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>in PHP 5:</h3>
+            <pre><code class="php" data-trim>
 Foo::{$bar['baz']}()
-          </code></pre>
-          <aside class="notes">
-            This is interpreted in PHP 5 as "take the value of $bar['baz'], and use that as a static property name". This is probably the most common variant of the four.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              This is interpreted in PHP 5 as "take the value of $bar['baz'], and use that as a static property name". This is probably the most common variant of the four.
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 Foo::$bar['baz']()
-          </code></pre>
-          <h3>in PHP 7:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>in PHP 7:</h3>
+            <pre><code class="php" data-trim>
 (Foo::$bar)['baz']()
-          </code></pre>
-          <aside class="notes">
-            PHP 7: Take the value of the static $bar property of Foo, then get the array value, then call that callable.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              PHP 7: Take the value of the static $bar property of Foo, then get the array value, then call that callable.
+            </aside>
+          </section>
 
-        <section>
-          <h2>What do you do?</h2>
-        </section>
+          <section>
+            <h2>What do I do?</h2>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 Foo::$bar['baz']()
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 Foo::$bar['baz']()
-          </code></pre>
-          <h3>Using curly braces:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>Using curly braces:</h3>
+            <pre><code class="php" data-trim>
 Foo::{$bar['baz']}()
-          </code></pre>
-          <aside class="notes">
-            The earlier examples with parentheses and/or curly braces will work for preserving PHP 5 behaviour.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              The earlier examples with parentheses and/or curly braces will work for preserving PHP 5 behaviour.
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 Foo::$bar['baz']()
-          </code></pre>
-          <h3>Break it down:</h3>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <h3>Break it down:</h3>
+            <pre><code class="php" data-trim>
 $method = $bar['baz'];
 Foo::$method();
-          </code></pre>
-          <aside class="notes">
-            I'd prefer this for clarity.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              I'd prefer this for clarity.
+            </aside>
+          </section>
 
-        <section>
-          <h2>What to look for</h2>
-        </section>
+          <section>
+            <h2>What do I look for?</h2>
+          </section>
 
-        <section>
-          <h2 class="lowercase">IDEs</h2>
-        </section>
+          <section>
+            <h2 class="lowercase">IDEs</h2>
+          </section>
 
-        <section>
-          <pre class="wrap"><code class="bash" data-trim>
+          <section>
+            <pre class="wrap"><code class="bash" data-trim>
 git grep -E '((((::)|(-&gt;))\$[a-zA-Z_][a-zA-Z0-9_]*)+\[[^\s]+\]\())|(-&gt;\$[a-zA-Z_][a-zA-Z0-9_]*\[)|(\$\$[a-zA-Z_][a-zA-Z0-9_]*\[)'
-          </code></pre>
-          <aside class="notes">
-            I'll tweet this later. This isn't perfect (doesn't support non-ASCII variable names), but will probably catch most sins.
-            (end of section)
-          </aside>
+            </code></pre>
+            <aside class="notes">
+              I'll tweet this later. This isn't perfect (doesn't support non-ASCII variable names), but will probably catch most sins.
+              (end of section)
+            </aside>
+          </section>
         </section>
 
         <section>
-          <h2>Engine exceptions</h2>
-          <aside class="notes">
-            In PHP 5, there is a very hard line between errors and exceptions. In PHP 7, where possible, the runtime will throw exceptions for errors &mdash; including some that were previously unrecoverable.
-          </aside>
-        </section>
+          <section>
+            <h2>Engine exceptions</h2>
+            <aside class="notes">
+              In PHP 5, there is a very hard line between errors and exceptions. In PHP 7, where possible, the runtime will throw exceptions for errors &mdash; including some that were previously unrecoverable.
+            </aside>
+          </section>
 
-        <section>
-          <h2>PHP 5</h2>
-          <p>
-            <code>E_ERROR</code>: 182<br>
-            <code>E_RECOVERABLE_ERROR</code>: 17<br>
-            <code>E_PARSE</code>: 1
-          </p>
-        </section>
+          <section>
+            <h2>PHP 5</h2>
+            <p>
+              <code>E_ERROR</code>: 182<br>
+              <code>E_RECOVERABLE_ERROR</code>: 17<br>
+              <code>E_PARSE</code>: 1
+            </p>
+          </section>
 
-        <section>
-          <h2>PHP 7</h2>
-          <p>
-            <code>E_ERROR</code>: 54 (<span class="diff-minus">-128</span>)<br>
-            <code>E_RECOVERABLE_ERROR</code>: 3 (<span class="diff-minus">-14</span>)<br>
-            <code>E_PARSE</code>: 0 (<span class="diff-minus">-1</span>)
-          </p>
-        </section>
+          <section>
+            <h2>PHP 7</h2>
+            <p>
+              <code>E_ERROR</code>: 54 (<span class="diff-minus">-128</span>)<br>
+              <code>E_RECOVERABLE_ERROR</code>: 3 (<span class="diff-minus">-14</span>)<br>
+              <code>E_PARSE</code>: 0 (<span class="diff-minus">-1</span>)
+            </p>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 function square(int $n): int {
   return $n * $n;
 }
 
 square('foo');
-          </code></pre>
-          <aside class="notes">
-            Here's an example of code that will generate a TypeError.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              Here's an example of code that will generate a TypeError.
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="nohighlight" data-trim>
+          <section>
+            <pre><code class="nohighlight" data-trim>
 Fatal error: Uncaught TypeError:
 Argument 1 passed to square() must
 be of the type integer, string given
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 try {
   square('foo');
 } catch (TypeError $e) {
   // Recover gracefully.
   // (or show a graceful error)
 }
-          </code></pre>
-          <aside class="notes">
-            You can catch these error exceptions like any other exception.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              You can catch these error exceptions like any other exception.
+            </aside>
+          </section>
 
-        <section>
-          <h2>PHP 5</h2>
-          <pre><code class="nohighlight" data-trim>
+          <section>
+            <h2>PHP 5</h2>
+            <pre><code class="nohighlight" data-trim>
 Exception
   LogicException
   RuntimeException
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <h2>PHP 7</h2>
-          <pre><code class="nohighlight" data-trim>
+          <section>
+            <h2>PHP 7</h2>
+            <pre><code class="nohighlight" data-trim>
 Throwable
   Error
     ParseError
@@ -482,271 +495,634 @@ Throwable
   Exception
     LogicException
     RuntimeException
-          </code></pre>
-          <aside class="notes">
-            These names are very subject to change, and don't match what is currently in master.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              These names are very subject to change, and don't match what is currently in master.
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 try {
   ...
 } catch (Exception $e) {
   // Catch almost everything?
 }
-          </code></pre>
-          <aside class="notes">
-            What this means is that catch-all exception blocks no longer catch all exceptions (Pokemon-style), but this is a good thing, since the new exceptions aren't user generated and probably not what you expected to catch.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              What this means is that catch-all exception blocks no longer catch all exceptions (Pokemon-style), but this is a good thing, since the new exceptions aren't user generated and probably not what you expected to catch.
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 try {
   ...
 } catch (Throwable $e) {
   // Catch everything, but is
   // that a good idea?
 }
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <p><code>set_exception_handler</code></p>
-          <aside class="notes">
-            If you leave your existing Pokemon handlers alone, you can use set_exception_handler much as you used set_error_handler in PHP 5.
-          </aside>
-        </section>
+          <section>
+            <h2>What do I do?</h2>
+          </section>
 
-        <section>
-          <h2>PHP 5</h2>
-          <svg class="flowchart" width="1100" height="300">
-            <defs>
-              <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
-                <path d="M0,0 L4,2 0,4" />
-              </marker>
-            </defs>
+          <section>
+            <p><code>set_exception_handler</code></p>
+            <aside class="notes">
+              If you leave your existing Pokemon handlers alone, you can use set_exception_handler much as you used set_error_handler in PHP 5.
+            </aside>
+          </section>
 
-            <text x="20" y="100">Errors</text>
-            <line class="arrow" x1="300" y1="80" x2="500" y2="80" />
-            <text x="1080" y="100" class="code" text-anchor="end">set_error_handler</text>
-            <text x="20" y="200">Exceptions</text>
-            <line class="arrow" x1="300" y1="180" x2="500" y2="180" />
-            <text x="1080" y="200" class="code" text-anchor="end">catch</text>
-          </svg>
-          <aside class="notes">
-            Here's how I'd do it. You can use a top level catch, of course, but the key is that you're not using set_exception_handler in PHP 5.
-          </aside>
-        </section>
+          <section>
+            <h2>PHP 5</h2>
+            <svg class="flowchart" width="1100" height="300">
+              <defs>
+                <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
+                  <path d="M0,0 L4,2 0,4" />
+                </marker>
+              </defs>
 
-        <section>
-          <h2>PHP 7</h2>
-          <svg class="flowchart" width="1100" height="400">
-            <defs>
-              <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
-                <path d="M0,0 L4,2 0,4" />
-              </marker>
-            </defs>
+              <text x="20" y="100">Errors</text>
+              <line class="arrow" x1="300" y1="80" x2="500" y2="80" />
+              <text x="1080" y="100" class="code" text-anchor="end">set_error_handler</text>
+              <text x="20" y="200">Exceptions</text>
+              <line class="arrow" x1="300" y1="180" x2="500" y2="180" />
+              <text x="1080" y="200" class="code" text-anchor="end">catch</text>
+            </svg>
+            <aside class="notes">
+              Here's how I'd do it. You can use a top level catch, of course, but the key is that you're not using set_exception_handler in PHP 5.
+            </aside>
+          </section>
 
-            <text x="20" y="100">Errors</text>
-            <line class="arrow" x1="350" y1="80" x2="400" y2="80" />
-            <text x="1080" y="100" class="code" text-anchor="end">set_error_handler</text>
-            <text x="20" y="220">Exceptions</text>
-            <text x="70" y="300" class="code">Error</text>
-            <line class="arrow" x1="350" y1="280" x2="400" y2="280" />
-            <text x="1080" y="300" class="code" text-anchor="end">set_exception_handler</text>
-            <text x="70" y="380" class="code">Exception</text>
-            <line class="arrow" x1="350" y1="360" x2="400" y2="360" />
-            <text x="1080" y="380" class="code" text-anchor="end">catch</text>
-          </svg>
-          <aside class="notes">
-            The callback you register with set_exception_handler will presumably do similar things to set_error_handler.
-          </aside>
-        </section>
+          <section>
+            <h2>PHP 7</h2>
+            <svg class="flowchart" width="1100" height="400">
+              <defs>
+                <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
+                  <path d="M0,0 L4,2 0,4" />
+                </marker>
+              </defs>
 
-        <section>
-          <h2>Today</h2>
-          <pre><code class="php" data-trim>
+              <text x="20" y="100">Errors</text>
+              <line class="arrow" x1="350" y1="80" x2="400" y2="80" />
+              <text x="1080" y="100" class="code" text-anchor="end">set_error_handler</text>
+              <text x="20" y="220">Exceptions</text>
+              <text x="70" y="300" class="code">Error</text>
+              <line class="arrow" x1="350" y1="280" x2="400" y2="280" />
+              <text x="1080" y="300" class="code" text-anchor="end">set_exception_handler</text>
+              <text x="70" y="380" class="code">Exception</text>
+              <line class="arrow" x1="350" y1="360" x2="400" y2="360" />
+              <text x="1080" y="380" class="code" text-anchor="end">catch</text>
+            </svg>
+            <aside class="notes">
+              The callback you register with set_exception_handler will presumably do similar things to set_error_handler.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Today</h2>
+            <pre><code class="php" data-trim>
 function log_exc(Exception $e) {
   ...
 }
 
 set_exception_handler('log_exc');
-          </code></pre>
-          <aside class="notes">
-            There's an additional wrinkle. Most of you probably have (or at least use) code something like this. There's a problem (type hint).
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              There's an additional wrinkle. Most of you probably have (or at least use) code something like this. There's a problem (type hint).
+            </aside>
+          </section>
 
-        <section>
-          <h2>PHP 7 only</h2>
-          <pre><code class="php" data-trim>
+          <section>
+            <h2>PHP 7 only</h2>
+            <pre><code class="php" data-trim>
 function log_exc(Throwable $e) {
   ...
 }
 
 set_exception_handler('log_exc');
-          </code></pre>
-          <aside class="notes">
-            If you're writing PHP 7 only code, then you can simply replace the type hint with Throwable (or whatever it's called).
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              If you're writing PHP 7 only code, then you can simply replace the type hint with Throwable (or whatever it's called).
+            </aside>
+          </section>
 
-        <section>
-          <h2>PHP 5 and 7</h2>
-          <pre><code class="php" data-trim>
+          <section>
+            <h2>PHP 5 and 7</h2>
+            <pre><code class="php" data-trim>
 function log_exc($e) {
   ...
 }
 
 set_exception_handler('log_exc');
-          </code></pre>
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>What do I look for?</h2>
+            <pre><code class="nohighlight">git grep set_exception_handler</code></pre>
+            <pre class="wrap"><code class="nohighlight">git grep -E 'catch\s*\(\\?Exception\s'</code></pre>
+            <aside class="notes">
+              End of section.
+            </aside>
+          </section>
         </section>
 
         <section>
-          <h2>What to look for</h2>
-          <pre><code class="nohighlight">git grep set_exception_handler</code></pre>
-          <pre class="wrap"><code class="nohighlight">git grep -E 'catch\s*\(\\?Exception\s'</code></pre>
-          <aside class="notes">
-            End of section.
-          </aside>
-        </section>
+          <section>
+            <h2>foreach</h2>
+            <aside class="notes">
+              Oh no, I hear you all say. How is foreach broken? Let me count the ways&hellip;
+            </aside>
+          </section>
 
-        <section>
-          <h2>foreach</h2>
-          <aside class="notes">
-            Oh no, I hear you all say. How is foreach broken? Let me count the ways&hellip;
-          </aside>
-        </section>
+          <section>
+            <h3>(there are two)</h3>
+          </section>
 
-        <section>
-          <h3>(there are two)</h3>
-        </section>
-
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $a = [1];
 foreach ($a as &amp;$v) {
   if ($v == 1) $a[] = 2;
   var_dump($v);
 }
-          </code></pre>
-          <h3>PHP 5:</h3>
-          <pre><code class="nohighlight" data-trim>
+            </code></pre>
+            <h3>PHP 5:</h3>
+            <pre><code class="nohighlight" data-trim>
 int(1)
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $a = [1];
 foreach ($a as &amp;$v) {
   if ($v == 1) $a[] = 2;
   var_dump($v);
 }
-          </code></pre>
-          <h3>PHP 7:</h3>
-          <pre><code class="nohighlight" data-trim>
+            </code></pre>
+            <h3>PHP 7:</h3>
+            <pre><code class="nohighlight" data-trim>
 int(1)
 int(2)
-          </code></pre>
-          <aside class="notes">
-            This isn't really a bad change, but it is different.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              This isn't really a bad change, but it is different.
+            </aside>
+          </section>
 
-        <section>
-          <p>
-            <code>reset()</code><br>
-            <code>key()</code><br>
-            <code>current()</code><br>
-            <code>end()</code><br>
-            <code>next()</code><br>
-            <code>prev()</code><br>
-            <code>pos()</code>
-          </p>
-          <aside class="notes">
-            There is another foreach change. Who knows these functions?
-          </aside>
-        </section>
+          <section>
+            <p>
+              <code>reset()</code><br>
+              <code>key()</code><br>
+              <code>current()</code><br>
+              <code>end()</code><br>
+              <code>next()</code><br>
+              <code>prev()</code><br>
+              <code>pos()</code>
+            </p>
+            <aside class="notes">
+              There is another foreach change. Who knows these functions?
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $a = range(1, 3);
 foreach ($a as &amp;$v) {
   var_dump(current($a));
 }
-          </code></pre>
-          <h3>PHP 5:</h3>
-          <pre><code class="nohighlight" data-trim>
+            </code></pre>
+            <h3>PHP 5:</h3>
+            <pre><code class="nohighlight" data-trim>
 int(2)
 int(3)
 bool(false)
-          </code></pre>
-          <aside class="notes">
-            Foreach used to set the internal array pointer when iterating by reference, so you could do horrible things like this.
-          </aside>
-        </section>
+            </code></pre>
+            <aside class="notes">
+              Foreach used to set the internal array pointer when iterating by reference, so you could do horrible things like this.
+            </aside>
+          </section>
 
-        <section>
-          <pre><code class="php" data-trim>
+          <section>
+            <pre><code class="php" data-trim>
 $a = range(1, 3);
 foreach ($a as &amp;$v) {
   var_dump(current($a));
 }
-          </code></pre>
-          <h3>PHP 7:</h3>
-          <pre><code class="nohighlight" data-trim>
+            </code></pre>
+            <h3>PHP 7:</h3>
+            <pre><code class="nohighlight" data-trim>
 int(1)
 int(1)
 int(1)
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <h2>What to look for</h2>
-          <pre class="wrap"><code class="nohighlight" data-trim>
-git grep -E 'foreach.*\sas\s+&amp;'
-          </code></pre>
-          <aside class="notes">
-            There are no errors. Look for any foreach by reference. Yes, all of them.
-          </aside>
-        </section>
+          <section>
+            <h2>What do I do?</h2>
+          </section>
 
-        <section>
-          <h2>Don't use the old array functions</h2>
-          <aside class="notes">
-            This is probably good advice in general.
-          </aside>
-        </section>
+          <section>
+            <h2>Don't use the old array functions</h2>
+            <aside class="notes">
+              This is probably good advice in general.
+            </aside>
+          </section>
 
-        <section>
-          <h2>Use <code>array_walk</code> or <code>array_map</code></h2>
-          <pre><code class="php" data-trim>
+          <section>
+            <h2>Use <code>array_walk</code> or <code>array_map</code></h2>
+            <pre><code class="php" data-trim>
 array_walk($a, function (&amp;$v, $k) {
   ...
 });
-          </code></pre>
-          <pre><code class="php" data-trim>
+            </code></pre>
+            <pre><code class="php" data-trim>
 $a = array_map(function ($v) {
   ...
 }, $a);
-          </code></pre>
-          <aside class="notes">
-            If you're not actually adding or removing elements, then use a function that isolates the scope. One of PHP's most commonly reported "bugs" is loop variables causing weirdness later, and you can remove that (and simulate lexical scope).
-          </aside>
+            </code></pre>
+            <aside class="notes">
+              If you're not actually adding or removing elements, then use a function that isolates the scope. One of PHP's most commonly reported "bugs" is loop variables causing weirdness later, and you can remove that (and simulate lexical scope).
+            </aside>
+          </section>
+
+          <section>
+            <h2>Refactor</h2>
+            <aside class="notes">
+              If you have to add or remove elements within the loop: you're going to have to figure out how not to, otherwise you're going to get inconsistent behaviour.
+            </aside>
+          </section>
+
+          <section>
+            <h2>What do I look for?</h2>
+            <pre class="wrap"><code class="nohighlight" data-trim>
+git grep -E 'foreach.*\sas\s+&amp;'
+            </code></pre>
+            <aside class="notes">
+              There are no errors. Look for any foreach by reference. Yes, all of them.
+              (End of section.)
+            </aside>
+          </section>
         </section>
 
         <section>
-          <h2>Refactor</h2>
-          <aside class="notes">
-            If you have to add or remove elements within the loop: you're going to have to figure out how not to, otherwise you're going to get inconsistent behaviour.
-            (End of section.)
-          </aside>
+          <section>
+            <h2>Hex strings are no longer numeric</h2>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+function square($n) {
+  return $n * $n;
+}
+
+echo square("0x10");
+            </code></pre>
+            <h3>PHP 5:</h3>
+            <pre><code class="nohighlight" data-trim>
+  256
+            </code></pre>
+            <aside class="notes">
+              Let's go back to our old friend the square function. In PHP 5, the 0x10 is treated as 16.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+function square($n) {
+  return $n * $n;
+}
+
+echo square("0x10");
+            </code></pre>
+            <h3>PHP 7:</h3>
+            <pre><code class="nohighlight" data-trim>
+0
+            </code></pre>
+            <aside class="notes">
+              Note that this is silent, due to PHP's long established string&rarr;number semantics (the string is ignored from the first non-numeric-string character onwards, in this case the x). No warning.
+            </aside>
+          </section>
+
+          <section>
+            <h2>What do I do?</h2>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+$n = sscanf('0x10', '%x')[0];
+echo square($n);
+            </code></pre>
+            <aside class="notes">
+              In terms of what you do: there are a few options. If you know it's a hex string, you can use sscanf(). Or hexdec() with some pre-processing. If you don't know, it's going to be harder. My advice is to know when you expect hex strings.
+            </aside>
+          </section>
+
+          <section>
+            <h2>What do I look for?</h2>
+          </section>
+
+          <section>
+            <h2>¯\_(ツ)_/¯</h2>
+            <aside class="notes">
+              This is probably the best example in this presentation &mdash; and there are a few good ones &mdash; of something that you're probably only going to pick up with testing. You can grep for string literals, but that probably won't cover most cases.
+              (End of section.)
+            </aside>
+          </section>
         </section>
 
         <section>
+          <section>
+            <h2><code>list()</code> fails silently with string input</h2>
+            <aside class="notes">
+              This is obscure, but I'm mentioning it because it's silent.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+$s = 'abc';
+list($a, $b, $c) = $s;
+var_dump($a, $b, $c);
+            </code></pre>
+            <h3>PHP 5:</h3>
+            <pre><code class="nohighlight" data-trim>
+string(1) "a"
+string(1) "b"
+string(1) "c"
+            </code></pre>
+            <aside class="notes">
+              Interestingly, this only worked if the right hand side was a variable, not a literal.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+$s = 'abc';
+list($a, $b, $c) = $s;
+var_dump($a, $b, $c);
+            </code></pre>
+            <h3>PHP 7:</h3>
+            <pre><code class="nohighlight" data-trim>
+NULL
+NULL
+NULL
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>What do I do?</h2>
+            <pre><code class="php" data-trim>
+list($a, $b, $c) = str_split($s);
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>What do I look for?</h2>
+            <aside class="notes">
+              Realistically, it depends on how much you use list(). If it's not much, just check all of them to ensure they only get arrays. If it's a lot, testing.
+              (End of section.)
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2><code>yield</code></h2>
+            <aside class="notes">
+              But we only just added that! The associativity has changed.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+yield $foo or $bar;
+            </code></pre>
+            <h3>in PHP 5:</h3>
+            <pre><code class="php" data-trim>
+yield ($foo or $bar);
+            </code></pre>
+            <aside class="notes">
+              In practice, this returns a boolean.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+yield $foo or $bar;
+            </code></pre>
+            <h3>in PHP 7:</h3>
+            <pre><code class="php" data-trim>
+(yield $foo) or $bar;
+            </code></pre>
+            <aside class="notes">
+              Accessing $bar probably isn't super useful, although this does open up the ever popular "or die" pattern.
+            </aside>
+          </section>
+
+          <section>
+            <h2>What do I do?</h2>
+            <aside class="notes">
+              Parenthesise.
+            </aside>
+          </section>
+
+          <section>
+            <h2>What do I look for?</h2>
+            <aside class="notes">
+              Really, most projects can just audit all yield statements. There's too much variation in what syntax is acceptable to come up with a sensible regex.
+              (End of section.)
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Sorting</h2>
+            <aside class="notes">
+              That sounds dramatic. It's not really, though: PHP has never guaranteed a stable sort, and for performance reasons, the behaviour of PHP's sorting functions may result in different ordering for equal elements in PHP 7.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+$a = ['o', 'O'];
+sort($a, SORT_STRING|SORT_FLAG_CASE);
+echo json_encode($a);
+            </code></pre>
+            <h3>in PHP 5:</h3>
+            <pre><code class="php" data-trim>
+["O","o"]
+            </code></pre>
+            <aside class="notes">
+              Note that the order gets swapped. This is what I mean by an unstable sort.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+$a = ['o', 'O'];
+sort($a, SORT_STRING|SORT_FLAG_CASE);
+echo json_encode($a);
+            </code></pre>
+            <h3>in PHP 7:</h3>
+            <pre><code class="php" data-trim>
+["o","O"]
+            </code></pre>
+            <aside class="notes">
+              In PHP 7, it's more stable in this case, but the important part is that it's different.
+            </aside>
+          </section>
+
+          <section>
+            <h2>What do I do?</h2>
+            <aside class="notes">
+              This is most likely to come up in overly specific test cases. (continued on the next slide)
+            </aside>
+          </section>
+
+          <section>
+            <h2>What do I look for?</h2>
+            <aside class="notes">
+              Broken tests.
+              (End of section.)
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2><code>date.timezone</code></h2>
+          </section>
+
+          <section>
+            <h2>PHP 5</h2>
+            <pre class="wrap"><code class="nohighlight" data-trim>
+DateTime::__construct(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function.
+...
+            </code></pre>
+            <aside class="notes">
+              We've all seen this in PHP 5.
+            </aside>
+          </section>
+
+          <section>
+            <h2>PHP 7</h2>
+            <pre class="wrap"><code class="nohighlight">
+            </code></pre>
+            <aside class="notes">
+              It's gone! But this isn't necessarily good news; it just means PHP will choose UTC for you. You still need to set date.timezone in practice.
+              (End of section.)
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/scream.jpg">
+            <aside class="notes">
+              So if that's all the things that won't scream at you, what are the most likely things that will?
+            </aside>
+          </section>
+
+          <section>
+            <p>
+              <code>bool</code><br>
+              <code>int</code><br>
+              <code>float</code><br>
+              <code>string</code><br>
+              <code>null</code><br>
+              <code>false</code><br>
+              <code>true</code><br>
+              <code>resource</code><br>
+              <code>object</code><br>
+              <code>mixed</code><br>
+              <code>numeric</code>
+            </p>
+            <aside class="notes">
+              These are the names that are now unavailable to classes, interfaces and traits, as they're used for scalar type declarations. Remember that these names are case insensitive. I'd avoid "scalar" and "void", too.
+            </aside>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+$HTTP_RAW_POST_DATA
+            </code></pre>
+            <h3>becomes:</h3>
+            <pre><code class="php" data-trim>
+file_get_contents('php://input');
+            </code></pre>
+          </section>
+
+          <section>
+            <h2><code>ext/mysql</code> is gone</h2>
+            <h3>(really)</h3>
+          </section>
+
+          <section>
+            <pre><code class="php" data-trim>
+function f() {
+  global $$foo-&gt;bar;
+}
+            </code></pre>
+            <aside class="notes">
+              You can't provide variable variables to global any more. If you did that, you were a horrible person anyway.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/calendar.jpg">
+            <aside class="notes">
+              So, when can you have all of this goodness?
+            </aside>
+          </section>
+
+          <section data-background="images/yesterday.jpg">
+            <aside class="notes">
+              Yesterday! (I bid 300 quatloos on the newcomer.)
+            </aside>
+          </section>
+
+          <section>
+            <p><a href="http://php7.zend.com">Zend repos</a></p>
+            <p><a href="https://atlas.hashicorp.com/rasmus/boxes/php7dev">Rasmus's (slightly out of date) php7dev Vagrant image</a></p>
+            <aside class="notes">
+              There are some pre-built packages available.
+            </aside>
+          </section>
+
+          <section data-background="images/tools.jpg">
+            <aside class="notes">
+              You can also build it yourself. No dependencies have changed from PHP 5 (at least on any reasonably modern distro), so if you can build 5, you can build 7.
+            </aside>
+          </section>
+
+          <section data-background="images/soon.jpg">
+            <aside class="notes">
+              Alpha releases are likely to start very, very soon (think days or weeks, not months). Once that happens, it's likely that more official packages will appear soon after from the usual suspects like Ondrej and Remi.
+            </aside>
+          </section>
+
+          <section data-background="images/mirror.jpg">
+            <aside class="notes">
+              Finally, remember that turnabout is fair play. The focus of this presentation has been helping you migrate your code, but we need your help too. If you find bugs, report them! Send PRs! Be amazing!
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>Questions?</h2>
+          <p><a href="https://joind.in/talk/view/13745">http://joind.in/13745</a></p>
+          <p><a href="https://lawngnome.github.io/php7-omg-panic/">https://lawngnome.github.io/php7-omg-panic/</a></p>
+          <p><a href="https://twitter.com/LGnome">@LGnome</a></p>
+        </section>
+
+        <section class="image">
           <h2>Image credits</h2>
           <p><em>PHP7</em>: <a href="https://twitter.com/elroubio">Vincent Pontier</a></p>
           <p><em>Panic</em>: <a href="https://flic.kr/p/pwcRe1">wackystuff</a> (CC-BY-SA 2.0)</p>
@@ -756,6 +1132,11 @@ $a = array_map(function ($v) {
           <p><em>Dual wield</em>: <a href="https://flic.kr/p/8yhodT">Joriel Jimenez</a> (CC-BY 2.0)</p>
           <p><em>What do?</em>: <a href="https://flic.kr/p/9fwoMs">Ian Sane</a> (CC-BY 2.0)</p>
           <p><em>Strategy</em>: <a href="https://flic.kr/p/7TpXix">Horia Varlan</a> (CC-BY 2.0)</p>
+          <p><em>The Scream</em>: Edvard Munch (PD)</p>
+          <p><em>Sun stone</em>: <a href="https://flic.kr/p/4jkjPw">Michael McCarty</a> (CC-BY 2.0)</p>
+          <p><em>Yesterday</em>: Star Trek</p>
+          <p><em>Wrenches</em>: <a href="https://flic.kr/p/7xWi7w">LadyDragonflyCC - &gt;;&lt;</a> (CC-BY 2.0)</p>
+          <p><em>Soon</em>: <a href="https://flic.kr/p/8dLzmM">k rupp</a> (CC-BY 2.0)</p>
         </section>
 			</div>
 
