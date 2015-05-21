@@ -144,21 +144,68 @@
 
           <section data-background="images/dual-wield.jpg">
             <aside class="notes">
-              Or you can dual wield PHP 5 and 7. And now I shall undermine the entire concept of this presentation.
+              Or you can dual wield PHP 5 and 7. A cautionary tale:
             </aside>
           </section>
 
           <section>
-            <img src="images/lorna-tweet.png">
+            <h2>BC theory</h2>
+            <svg class="bc" width="1000" height="500">
+              <defs>
+                <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
+                  <path d="M0,0 L4,2 0,4" />
+                </marker>
+              </defs>
+
+              <circle class="old fill" cx="350" cy="210" r="200" />
+              <circle class="new fill" cx="650" cy="210" r="200" />
+              <circle class="outline" cx="350" cy="210" r="200" />
+              <circle class="outline" cx="650" cy="210" r="200" />
+              <text class="label" x="310" y="200">Old &amp;</text>
+              <text class="label" x="310" y="260">broken</text>
+              <text class="label" x="690" y="200">New &amp;</text>
+              <text class="label" x="690" y="260">shiny</text>
+              <text class="label" x="500" y="490">Libraries</text>
+              <line class="arrow" x1="500" y1="450" x2="500" y2="250" />
+            </svg>
+          </section>
+
+          <section>
+            <h2>BC theory</h2>
+            <svg class="bc" width="1000" height="500">
+              <defs>
+                <marker id="arrowhead" markerWidth="4" markerHeight="4" orient="auto" refY="2">
+                  <path d="M0,0 L4,2 0,4" />
+                </marker>
+              </defs>
+
+              <circle class="old fill" cx="450" cy="210" r="200" />
+              <circle class="new fill" cx="550" cy="210" r="200" />
+              <circle class="outline" cx="450" cy="210" r="200" />
+              <circle class="outline" cx="550" cy="210" r="200" />
+              <text class="label" x="110" y="200">Old &amp;</text>
+              <text class="label" x="110" y="260">broken</text>
+              <text class="label" x="890" y="200">New &amp;</text>
+              <text class="label" x="890" y="260">shiny</text>
+              <text class="label" x="500" y="490">Libraries</text>
+              <line class="arrow" x1="500" y1="450" x2="500" y2="250" />
+            </svg>
             <aside class="notes">
-              This is a huge advantage.
+              You want to maximise the amount of code in the old version that doesn't have to change to work in the new version &mdash; it can be deprecated, but not removed &mdash; and minimise how many new features are incompatible with old code.
             </aside>
           </section>
 
           <section>
             <img class="stretch" src="images/python3.png">
             <aside class="notes">
-              Python 3.0 came out six and a half years ago. Adoption has been rocky because of the difficulty in supporting both versions. PHP 7 (hopefully) won't have that problem.
+              What happens if you don't do that? Python 3.0 came out six and a half years ago. Adoption has been rocky because of the difficulty in supporting both versions. PHP 7 (hopefully) won't have that problem.
+            </aside>
+          </section>
+
+          <section>
+            <img src="images/lorna-tweet.png">
+            <aside class="notes">
+              We've strived to keep that intersection as big as possible. And that results in tweets like this. Which are awesome, even if they kind of undermine the entire concept of the presentation.
             </aside>
           </section>
         </section>
@@ -1201,3 +1248,4 @@ function f() {
 
 	</body>
 </html>
+<!-- vim: set nocin ai et ts=2 sw=2: -->
