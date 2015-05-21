@@ -1,7 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Amaranth:700,700italic);
-@import url(http://fonts.googleapis.com/css?family=Creepster);
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:600&subset=latin,latin-ext);
-@import url(../octicons/octicons.css);
+@import url(fonts.css);
 
 .reveal {
   font-size: 48px;
@@ -30,7 +27,7 @@
 
 .horror {
   color: #a00 !important;
-  font-family: Creepster, Quicksand, sans-serif !important;
+  font-family: Creepster, Amaranth, sans-serif !important;
   letter-spacing: 0 !important;
 }
 
@@ -41,11 +38,13 @@
 
 .reveal code {
   font-family: "Source Code Pro", monospace;
+  font-weight: 600;
 }
 
 .reveal pre code {
   font-family: "Source Code Pro", monospace;
   font-size: 2em;
+  font-weight: 600;
   line-height: 1.4;
   max-height: 10000em;
 }
