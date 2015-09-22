@@ -167,6 +167,23 @@ img {
   text-anchor: middle;
 }
 
+/* history svg */
+#history rect {
+  fill: white;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+#history .version {
+  font-size: 40px;
+  font-weight: bold;
+  fill: black;
+}
+
+#history .date {
+  font-size: 25px;
+}
+
 .logo-container {
   position: absolute;
   left: 25vw;
