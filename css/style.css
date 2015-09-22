@@ -167,4 +167,30 @@ img {
   text-anchor: middle;
 }
 
+.logo-container {
+  position: absolute;
+  left: 25vw;
+  width: 50vw;
+  height: 28.12vw;
+}
+
+.logo-container img {
+  display: block;
+  width: 50vw;
+  height: 28.12vw;
+  position: absolute;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.logo-container .logo-php {
+  transition: left 2.2s;
+  left: 0;
+}
+
+.present > .logo-container.space .logo-php { 
+  left: -5vw;
+}
+
 /* vim: set nocin ai et ts=2 sw=2: */
