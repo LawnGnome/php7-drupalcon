@@ -5,6 +5,11 @@
   color: black;
 }
 
+.reveal h1.inverse, .reveal h2.inverse, .reveal h3.inverse, .reveal h4.inverse, .reveal h5.inverse, .reveal h6.inverse {
+  color: white;
+  text-shadow: black 0 0 4px;
+}
+
 .reveal {
   font-size: 48px;
 }

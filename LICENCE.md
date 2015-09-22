@@ -9,6 +9,7 @@ Several assets used in this talk are licensed differently. These are:
 
 ### CC-BY 2.0
 
+* [*Beaver Lake Dam - Open Floodgates* by Doug Wertman](https://flic.kr/p/9M5N6V)
 * [*Thick arrow made from jigsaw puzzle pieces* by Horia Varlan](https://flic.kr/p/7TpXix)
 * [*I'm So Confused* by Ian Sane](https://flic.kr/p/9fwoMs)
 * [*DOMODST* by Joriel Jimenez](https://flic.kr/p/8yhodT)
