@@ -412,14 +412,14 @@
           </section>
 
           <section>
-            <h2>Library authors</h2>
+            <h2>Module and library authors</h2>
             <aside class="notes">
               TELL YOUR USERS. Support both versions for a reasonable period. Document that. Tell your users more.
             </aside>
           </section>
 
           <section>
-            <h2>Library users</h2>
+            <h2>Module and library users</h2>
             <h3>(also known as everyone)</h3>
             <aside class="notes">
               Look for support policies. You can either have a flag day or support both, but if you're in a team (n&gt;1) environment, the latter is better, even if it's for a shorter period.
@@ -431,7 +431,7 @@
               <span class="mega-octicon octicon-git-pull-request"></span>
             </h2>
             <aside class="notes">
-              Don't be afraid of making changes to libraries to support PHP 7, but do be afraid of maintaining long lived forks. You need to get them upstream.
+              Don't be afraid of making changes to third party code to support PHP 7, but do be afraid of maintaining long lived forks. You need to get them upstream.
             </aside>
           </section>
         </section>
@@ -443,20 +443,23 @@
             </aside>
           </section>
 
-          <section>
-            <!-- TODO: background image of code coverage -->
-            <h2>Testing</h2>
+          <section data-background="images/phpunit.png">
+            <h2 class="inverse">Testing</h2>
             <aside class="notes">
-              If you don't have regression tests, get writing. These are the single biggest weapon you have to combat BC breaks. Code coverage and Derick and Sebastian's newly implemented branch coverage stats will help guide you in terms of whether you're testing enough.
+              If you don't have regression tests, get writing. These are the single biggest weapon you have to combat BC breaks. If you use PHPUnit, you can use code and branch coverage stats to guide you in terms of whether you're testing enough.
+            </aside>
+          </section>
+
+          <section data-background="images/php7mar.png">
+            <h2>Tooling</h2>
+            <p><a href="https://github.com/Alexia/php7mar">php7mar</a></p>
+            <p><a href="https://github.com/rlerdorf/phan">phan</a></p>
+            <aside class="notes">
+              Tools are starting to appear that can analyse your code to look for problems. Alexia Smith wrote php7mar (Migration Assistant Report); Rasmus wrote phan, which is a more general static analyser that includes detection for some BC breaks.
             </aside>
           </section>
 
           <section>
-            <h2>Tooling</h2>
-          </section>
-
-          <section>
-            <!-- TODO: background image of PHPUnit failures -->
             <h2>Try it!</h2>
             <aside class="notes">
               Install PHP 7 in a development/CI environment with E_ALL. See what breaks. Rinse and repeat.
@@ -466,7 +469,7 @@
 
         <section data-background="images/broken.jpg">
           <aside class="notes">
-            What's broken? (and how do we find them and fix them so they'll work on PHP 7, or preferably both)
+            OK, so what has PHP 7 broken? (and how do we find them and fix them so they'll work on PHP 7, or preferably both)
           </aside>
         </section>
 
