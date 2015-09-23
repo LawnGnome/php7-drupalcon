@@ -15,7 +15,7 @@ Several assets used in this talk are licensed differently. These are:
 * [*DOMODST* by Joriel Jimenez](https://flic.kr/p/8yhodT)
 * [*Wrenched DOF* by LadyDragonflyCC - >;<](https://flic.kr/p/7xWi7w)
 * [*Aztec Calendar at the Anthropology Museum in Mexico City* by Michael McCarty](https://flic.kr/p/4jkjPw)
-* [*Flag Day event in Volunteer Park, 1932* by Seattle Municipal Archives](https://flic.kr/p/7pvbw5)
+* [*Spanish Flag* by Magnus Akselvoll](https://flic.kr/p/7cDFru)
 * [*the future soon* by k rupp](https://flic.kr/p/8dLzmM)
 
 ### CC-BY-SA 2.0
