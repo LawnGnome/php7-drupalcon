@@ -234,19 +234,34 @@
 
         <section>
           <section>
-            <h2>It's faster</h2>
+            <h2>It's faster: phpdoc</h2>
             <canvas id="phpdoc-chart" width="900" height="400"></canvas>
             <aside class="notes">
               So that's the what. Let's talk about the why. Well, number one: as mentioned, it's faster.
               Building php-doc. Never trust a benchmark you didn't fake yourself.
             </aside>
-            <!-- TODO: Drupal 8 benchmarks; use time -v for memory -->
+          </section>
+
+          <section>
+            <h2>It's faster: Drupal 8</h2>
+            <canvas id="drupal-cpu-chart" width="900" height="400"></canvas>
+            <aside class="notes">
+              Drupal 8 beta 15 shows a less marked improvement, although I suspect that's mostly my test rig.
+            </aside>
+          </section>
+
+          <section>
+            <h2>It's smaller: Drupal 8</h2>
+            <canvas id="drupal-memory-chart" width="900" height="400"></canvas>
+            <aside class="notes">
+              But here's an extra win: PHP 7 is considerably lighter on memory usage than PHP 5.
+            </aside>
           </section>
 
           <section data-background="images/rfc.png">
             <h2>It's better</h2>
             <aside class="notes">
-              Features! Features! Features! (Numbers as of Tuesday.)
+              45 RFCs, as noted earlier. I'll talk a little about features, but there's lots I won't be covering today.
             </aside>
           </section>
         </section>
@@ -254,7 +269,7 @@
         <section>
           <section data-background="images/githut.png">
             <aside class="notes">
-              If that was the carrot, here's the stick. We have a problem: PHP (mostly 5) is popular. Really popular. 140k GitHub projects. Countless sites.
+              If that was the carrot, here's the stick. We have a problem: PHP (mostly 5) is popular. Really popular. 140k GitHub projects. Tens of millions of sites. (Many of which are built on Drupal.)
             </aside>
           </section>
 
@@ -277,9 +292,9 @@
           </section>
 
           <section>
-            <h3>(that's in 1 year, 11 months, 4 days)</h3>
+            <h3 class="parenthetical two-line">that's in 1 year, 11 months, 4 days</h3>
             <aside class="notes">
-              That's your changeover period. You <em>have</em> to support PHP 7 by the end of that period. Probably much sooner than that.
+              That's your changeover period. If you're working on distributed code: modules, themes, Drupal itself: you <em>have</em> to support PHP 7 by the end of that period. Probably much sooner than that. (Drupal 8!)
             </aside>
           </section>
         </section>
@@ -1424,8 +1439,28 @@ function f() {
     <script src="js/Chart.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var ctx = document.getElementById("phpdoc-chart").getContext("2d");
-        var chart = new Chart(ctx).Bar(
+        var addChart = function(id, data, options) {
+          var chartOptions = {
+            responsive: true,
+            scaleFontColor: "#333",
+            scaleFontFamily: "'Open Sans'",
+            scaleFontSize: 40,
+            scaleLabel: " <%=value%>",
+            scaleShowHorizontalLines: false,
+            scaleShowVerticalLines: false,
+          };
+
+          for (k in options) {
+            if (options.hasOwnProperty(k)) {
+              chartOptions[k] = options[k];
+            }
+          }
+
+          var ctx = document.getElementById(id).getContext("2d");
+          return new Chart(ctx).Bar(data, chartOptions);
+        };
+
+        addChart("phpdoc-chart",
           {
             labels: ["5.3", "5.4", "5.5", "5.6", "7.0"],
             datasets: [
@@ -1435,13 +1470,35 @@ function f() {
             ]
           },
           {
-            responsive: true,
-            scaleFontColor: "#333",
-            scaleFontFamily: "'Open Sans'",
-            scaleFontSize: 40,
-            scaleLabel: " <%=value%>",
-            scaleShowHorizontalLines: false,
-            scaleShowVerticalLines: false,
+            scaleLabel: " <%=value%> sec"
+          }
+        );
+
+        addChart("drupal-cpu-chart",
+          {
+            labels: ["5.5", "5.6", "7.0"],
+            datasets: [
+              {
+                data: [105.713, 105.951, 80.094]
+              }
+            ]
+          },
+          {
+            scaleLabel: " <%=value%> ms"
+          }
+        );
+
+        addChart("drupal-memory-chart",
+          {
+            labels: ["5.5", "5.6", "7.0"],
+            datasets: [
+              {
+                data: [37168 / 1024, 37092 / 1024, 29316 / 1024]
+              }
+            ]
+          },
+          {
+            scaleLabel: " <%=value%> MB"
           }
         );
       });

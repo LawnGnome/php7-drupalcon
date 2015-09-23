@@ -215,4 +215,24 @@ img {
   left: -5vw;
 }
 
+.parenthetical:before {
+  content: "(";
+  display: block;
+  float: left;
+}
+
+.parenthetical:after {
+  content: ")";
+  display: block;
+  float: right;
+}
+
+.parenthetical.two-line:before {
+  transform: translateY(0.3em) scale(3);
+}
+
+.parenthetical.two-line:after {
+  transform: translateY(-0.95em) scale(3);
+}
+
 /* vim: set nocin ai et ts=2 sw=2: */
