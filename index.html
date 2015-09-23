@@ -1279,7 +1279,7 @@ echo json_encode($a);
           <section>
             <h2>What do I look for?</h2>
             <aside class="notes">
-              Broken tests.
+              Broken tests. I don't really see this being a problem in practice for pretty much anyone, honestly. (And if it is, run.)
               (End of section.)
             </aside>
           </section>
@@ -1292,7 +1292,7 @@ echo json_encode($a);
 
           <section>
             <h2>PHP 5</h2>
-            <pre class="wrap"><code class="nohighlight" data-trim>
+            <pre class="wrap"><code class="nohighlight" style="font-size: 1.75em" data-trim>
 DateTime::__construct(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function.
 ...
             </code></pre>
@@ -1320,7 +1320,7 @@ DateTime::__construct(): It is not safe to rely on the system's timezone setting
           </section>
 
           <section>
-            <p>
+            <p style="font-size: 90%">
               <code>bool</code><br>
               <code>int</code><br>
               <code>float</code><br>
@@ -1346,11 +1346,17 @@ $HTTP_RAW_POST_DATA
             <pre><code class="php" data-trim>
 file_get_contents('php://input');
             </code></pre>
+            <aside class="notes">
+              You'll see an undefined variable warning there. It should be pretty obvious.
+            </aside>
           </section>
 
           <section>
             <h2><code>ext/mysql</code> is gone</h2>
             <h3>(really)</h3>
+            <aside class="notes">
+              This obviously doesn't affect you if you're using Drupal's database functionality, but just in case&hellip;
+            </aside>
           </section>
 
           <section>
@@ -1365,6 +1371,8 @@ function f() {
           </section>
         </section>
 
+        <!-- TODO: what's new section -->
+
         <section>
           <section data-background="images/calendar.jpg">
             <aside class="notes">
@@ -1372,15 +1380,24 @@ function f() {
             </aside>
           </section>
 
-          <section data-background="images/yesterday.jpg">
+          <section data-background="images/soon-cat.jpg">
+            <h2 class="inverse" style="transform: translateX(-5em)">SOON</h2>
             <aside class="notes">
-              Yesterday! (I bid 300 quatloos on the newcomer.)
+              SOON.
             </aside>
           </section>
 
           <section>
-            <p><a href="http://php7.zend.com">Zend repos</a></p>
-            <p><a href="https://atlas.hashicorp.com/rasmus/boxes/php7dev">Rasmus's (slightly out of date) php7dev Vagrant image</a></p>
+            <h2>Release candidates</h2>
+            <aside class="notes">
+              As of right now, we're at RC 3. The expectation is that we'll have a few more before the final (5.4 had eight!), but we're on the way, and a new RC will be released every two weeks until the white smoke appears.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Repositories</h2>
+            <p><a href="https://launchpad.net/~ondrej/+archive/ubuntu/php-7.0">Ondřej Surý's DEBs</a></p>
+            <p><a href="http://rpms.famillecollet.com/">Remi Collet's RPMs</a></p>
             <aside class="notes">
               There are some pre-built packages available.
             </aside>
@@ -1389,12 +1406,6 @@ function f() {
           <section data-background="images/tools.jpg">
             <aside class="notes">
               You can also build it yourself. No dependencies have changed from PHP 5 (at least on any reasonably modern distro), so if you can build 5, you can build 7.
-            </aside>
-          </section>
-
-          <section data-background="images/soon.jpg">
-            <aside class="notes">
-              Alpha releases are likely to start very, very soon (think days or weeks, not months). Once that happens, it's likely that more official packages will appear soon after from the usual suspects like Ondrej and Remi.
             </aside>
           </section>
 
@@ -1407,9 +1418,12 @@ function f() {
 
         <section>
           <h2>Questions?</h2>
-          <p><a href="https://joind.in/talk/view/13745">http://joind.in/13745</a></p>
-          <p><a href="https://lawngnome.github.io/php7-omg-panic/">https://lawngnome.github.io/php7-omg-panic/</a></p>
+          <p><a href="https://lawngnome.github.io/php7-drupalcon/">https://lawngnome.github.io/php7-drupalcon/</a></p>
+          <p><a href="http://php.net/migration70">http://php.net/migration70</a></p>
           <p><a href="https://twitter.com/LGnome">@LGnome</a></p>
+          <aside class="notes">
+            Please rate my talk!
+          </aside>
         </section>
 
         <section class="image">
@@ -1425,9 +1439,8 @@ function f() {
           <p><em>Strategy</em>: <a href="https://flic.kr/p/7TpXix">Horia Varlan</a> (CC-BY 2.0)</p>
           <p><em>The Scream</em>: Edvard Munch (PD)</p>
           <p><em>Sun stone</em>: <a href="https://flic.kr/p/4jkjPw">Michael McCarty</a> (CC-BY 2.0)</p>
-          <p><em>Yesterday</em>: Star Trek</p>
+          <p><em>Soon cat</em>: <a href="https://flic.kr/p/DC3Q">Guyon Morée</a> (CC-BY 2.0)</p>
           <p><em>Wrenches</em>: <a href="https://flic.kr/p/7xWi7w">LadyDragonflyCC - &gt;;&lt;</a> (CC-BY 2.0)</p>
-          <p><em>Soon</em>: <a href="https://flic.kr/p/8dLzmM">k rupp</a> (CC-BY 2.0)</p>
         </section>
 			</div>
 

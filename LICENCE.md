@@ -16,7 +16,7 @@ Several assets used in this talk are licensed differently. These are:
 * [*Wrenched DOF* by LadyDragonflyCC - >;<](https://flic.kr/p/7xWi7w)
 * [*Aztec Calendar at the Anthropology Museum in Mexico City* by Michael McCarty](https://flic.kr/p/4jkjPw)
 * [*Spanish Flag* by Magnus Akselvoll](https://flic.kr/p/7cDFru)
-* [*the future soon* by k rupp](https://flic.kr/p/8dLzmM)
+* [*Angry Tiger* by Guyon Morée](https://flic.kr/p/DC3Q)
 
 ### CC-BY-SA 2.0
 
@@ -31,7 +31,6 @@ Several assets used in this talk are licensed differently. These are:
 ### Other
 
 * [*php7* by Vincent Pontier](https://twitter.com/elroubio); fair use asserted
-* *Tomorrow is Yesterday* title card by Star Trek; fair use asserted
 
 ## Fonts
 
