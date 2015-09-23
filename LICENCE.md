@@ -11,7 +11,7 @@ Several assets used in this talk are licensed differently. These are:
 
 * [*Beaver Lake Dam - Open Floodgates* by Doug Wertman](https://flic.kr/p/9M5N6V)
 * [*Thick arrow made from jigsaw puzzle pieces* by Horia Varlan](https://flic.kr/p/7TpXix)
-* [*I'm So Confused* by Ian Sane](https://flic.kr/p/9fwoMs)
+* [*football sign* by klndonnelly](https://flic.kr/p/bjSzAs)
 * [*DOMODST* by Joriel Jimenez](https://flic.kr/p/8yhodT)
 * [*Wrenched DOF* by LadyDragonflyCC - >;<](https://flic.kr/p/7xWi7w)
 * [*Aztec Calendar at the Anthropology Museum in Mexico City* by Michael McCarty](https://flic.kr/p/4jkjPw)
