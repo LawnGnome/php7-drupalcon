@@ -242,11 +242,19 @@
             </aside>
           </section>
 
+          <section data-state="chart">
+            <h2>It's faster: typical blog</h2>
+            <canvas id="wordpress-chart" width="900" height="400"></canvas>
+            <aside class="notes">
+              I know this is a Drupal conference, but this one was mind-blowing enough that I had to check if I'd messed something up.
+            </aside>
+          </section>
+
           <section>
             <h2>It's faster: Drupal 8</h2>
             <canvas id="drupal-cpu-chart" width="900" height="400"></canvas>
             <aside class="notes">
-              Drupal 8 beta 15 shows a less marked improvement, although I suspect that's mostly my test rig.
+              Drupal 8 beta 15 shows a less marked improvement, although I suspect that's mostly my test rig: database access over TCP probably isn't helping.
             </aside>
           </section>
 
@@ -1545,12 +1553,26 @@ function f() {
           }
         );
 
+        addChart("wordpress-chart",
+          {
+            labels: ["5.5", "5.6", "7.0"],
+            datasets: [
+              {
+                data: [115.205, 60.288, 28.336]
+              }
+            ]
+          },
+          {
+            scaleLabel: " <%=value%> sec"
+          }
+        );
+
         addChart("drupal-cpu-chart",
           {
             labels: ["5.5", "5.6", "7.0"],
             datasets: [
               {
-                data: [105.713, 105.951, 80.094]
+                data: [37.688, 37.658, 26.406]
               }
             ]
           },
