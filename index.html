@@ -233,7 +233,7 @@
         </section>
 
         <section>
-          <section>
+          <section data-state="chart">
             <h2>It's faster: phpdoc</h2>
             <canvas id="phpdoc-chart" width="900" height="400"></canvas>
             <aside class="notes">
@@ -1372,6 +1372,37 @@ function f() {
         </section>
 
         <!-- TODO: what's new section -->
+        <section>
+          <section>
+            <h2>Type declarations</h2>
+          </section>
+
+          <section>
+            <h2>Null coalesce</h2>
+          </section>
+
+          <section>
+            <h2>SPACE</h2>
+          </section>
+
+          <section>
+            <h2>Anonymous classes</h2>
+          </section>
+
+          <section>
+            <h2>Expectations</h2>
+          </section>
+
+          <section>
+            <h2>Generators</h2>
+          </section>
+        </section>
+
+        <!-- TODO: overflowing background -->
+        <section>
+          <h2>And much, much more besides</h2>
+          <p>Check the <a href="http://php.net/migration70">migration guide</a></p>
+        </section>
 
         <section>
           <section data-background="images/calendar.jpg">
@@ -1478,7 +1509,7 @@ function f() {
 
     <script src="js/Chart.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      Reveal.addEventListener("chart", function () {
         var addChart = function(id, data, options) {
           var chartOptions = {
             responsive: true,
