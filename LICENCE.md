@@ -17,6 +17,8 @@ Several assets used in this talk are licensed differently. These are:
 * [*Aztec Calendar at the Anthropology Museum in Mexico City* by Michael McCarty](https://flic.kr/p/4jkjPw)
 * [*Spanish Flag* by Magnus Akselvoll](https://flic.kr/p/7cDFru)
 * [*Angry Tiger* by Guyon Morée](https://flic.kr/p/DC3Q)
+* [*Lots of Raspberries* by swong95765](https://flic.kr/p/opCkST)
+* [*star* by Tom Hall](https://flic.kr/p/sok2ye)
 
 ### CC-BY-SA 2.0
 

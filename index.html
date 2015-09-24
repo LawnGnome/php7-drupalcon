@@ -233,7 +233,7 @@
         </section>
 
         <section>
-          <section data-state="chart">
+          <section data-state="phpdoc-chart">
             <h2>It's faster: phpdoc</h2>
             <canvas id="phpdoc-chart" width="900" height="400"></canvas>
             <aside class="notes">
@@ -242,7 +242,7 @@
             </aside>
           </section>
 
-          <section data-state="chart">
+          <section data-state="wordpress-chart">
             <h2>It's faster: typical blog</h2>
             <canvas id="wordpress-chart" width="900" height="400"></canvas>
             <aside class="notes">
@@ -250,7 +250,7 @@
             </aside>
           </section>
 
-          <section>
+          <section data-state="drupal-cpu-chart">
             <h2>It's faster: Drupal 8</h2>
             <canvas id="drupal-cpu-chart" width="900" height="400"></canvas>
             <aside class="notes">
@@ -258,7 +258,7 @@
             </aside>
           </section>
 
-          <section>
+          <section data-state="drupal-memory-chart">
             <h2>It's smaller: Drupal 8</h2>
             <canvas id="drupal-memory-chart" width="900" height="400"></canvas>
             <aside class="notes">
@@ -1383,6 +1383,87 @@ function f() {
         <section>
           <section>
             <h2>Type declarations</h2>
+            <aside class="notes">
+              There are two major enhancements here.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Scalar types</h2>
+            <pre><code class="php" data-trim>
+function foo(int $a, string $b) {
+  echo gettype($a).' '.gettype($b);
+}
+            </code></pre>
+            <h3>outputs:</h3>
+            <pre><code class="nohighlight" data-trim>
+integer string
+            </code></pre>
+            <aside class="notes">
+              The cool thing is that you are guaranteed that $a and $b are those types. How that happens is configurable, though.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Strict mode</h2>
+            <pre><code class="php" style="font-size: 1.6em" data-trim>
+&lt;?php
+declare(strict_types=1);
+include 'foo.php'; // defines foo()
+foo('0', 'foo');
+            </code></pre>
+            <h3>outputs:</h3>
+            <pre><code class="nohighlight" style="font-size: 1.6em" data-trim>
+Fatal error: Uncaught TypeError: Argument
+1 passed to foo() must be of the type
+integer, string given, called in ...
+            </code></pre>
+            <aside class="notes">
+              As a caller, you can control whether the inputs will be converted or not. In strict mode, the input must be the correct type.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Weak mode</h2>
+            <pre><code class="php" style="font-size: 1.6em" data-trim>
+&lt;?php
+include 'foo.php'; // defines foo()
+foo('0', 'foo');
+            </code></pre>
+            <h3>outputs:</h3>
+            <pre><code class="nohighlight" style="font-size: 1.6em" data-trim>
+integer string
+            </code></pre>
+            <aside class="notes">
+              This is the default. Honestly, I think this is what you'll mostly want: it behaves like PHP does currently for internal functions. The important part is that the declare() affects functions you call, not functions you define.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Return types</h2>
+            <pre><code class="php" data-trim>
+function add(int $a, int $b): int {
+  return $a + $b;
+}
+            </code></pre>
+            <aside class="notes">
+              You can also define return types. These too are affected by strict typing: if the return value isn't the right type in strong mode, you get a TypeError.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Return types</h2>
+            <pre><code class="php" data-trim>
+interface UserInterface {
+  function getName(): string;
+  function getEmail(): string;
+  function login(string $pw): bool;
+}
+            </code></pre>
+            <aside class="notes">
+              My feeling is that these are mostly useful in interfaces and OO, since you can now constrain what methods defined on descendants and implementors return. Which is great from a duck typing perspective!
+              (end of section)
+            </aside>
           </section>
 
           <section>
@@ -1390,26 +1471,62 @@ function f() {
           </section>
 
           <section>
-            <h2>SPACE</h2>
+            <h2>Null coalesce</h2>
+            <pre><code class="php" data-trim>
+$a = isset($thing) ? $input : null;
+$b = isset($stuff) ? $stuff : null;
+$c = isset($brick) ? $brick : null;
+            </pre></code>
+            <aside class="notes">
+              We've all written code like this, I suspect.
+            </aside>
           </section>
 
           <section>
-            <h2>Anonymous classes</h2>
+            <h2>Null coalesce</h2>
+            <pre><code class="php" data-trim>
+$a = $thing ?? null;
+$b = $stuff ?? null;
+$c = $brick ?? null;
+            </pre></code>
+            <aside class="notes">
+              Instead, in PHP 7, you can write this. Only one use of the variable per line!
+              (end of section)
+            </aside>
+          </section>
+
+          <section data-background="images/space.jpg">
+            <aside class="notes">
+              Space. The final frontier. Of course, to explore space, you need a... (change)
+            </aside>
+          </section>
+
+          <section data-background="images/space.jpg">
+            <h2 class="inverse">&lt;=&gt;</h2>
+            <aside class="notes">
+              Spaceship!
+            </aside>
           </section>
 
           <section>
-            <h2>Expectations</h2>
-          </section>
-
-          <section>
-            <h2>Generators</h2>
+            <h2>Spaceship</h2>
+            <pre><code class="php" data-trim>
+usort($array, function ($a, $b) {
+  return $a-&gt;id &lt;=&gt; $b-&gt;id;
+});
+            </code></pre>
+            <aside class="notes">
+              (end of section)
+            </aside>
           </section>
         </section>
 
-        <!-- TODO: overflowing background -->
-        <section>
+        <section data-background="images/lots.jpg">
           <h2>And much, much more besides</h2>
           <p>Check the <a href="http://php.net/migration70">migration guide</a></p>
+          <aside class="notes">
+            Anonymous classes, expectations (better assertions), Unicode codepoint escapes, huge generator improvements (delegation, return values), Closure::call, group use...
+          </aside>
         </section>
 
         <section>
@@ -1477,6 +1594,8 @@ function f() {
           <p><em>What do?</em>: <a href="https://flic.kr/p/bjSzAs">klndonnelly</a> (CC-BY 2.0)</p>
           <p><em>Strategy</em>: <a href="https://flic.kr/p/7TpXix">Horia Varlan</a> (CC-BY 2.0)</p>
           <p><em>The Scream</em>: Edvard Munch (PD)</p>
+          <p><em>Lots</em>: <a href="https://flic.kr/p/opCkST">swong95765</a> (CC-BY 2.0)</p>
+          <p><em>Stars</em>: <a href="https://flic.kr/p/sok2ye">Tom Hall</a> (CC-BY 2.0)</p>
           <p><em>Sun stone</em>: <a href="https://flic.kr/p/4jkjPw">Michael McCarty</a> (CC-BY 2.0)</p>
           <p><em>Soon cat</em>: <a href="https://flic.kr/p/DC3Q">Guyon Morée</a> (CC-BY 2.0)</p>
           <p><em>Wrenches</em>: <a href="https://flic.kr/p/7xWi7w">LadyDragonflyCC - &gt;;&lt;</a> (CC-BY 2.0)</p>
@@ -1517,7 +1636,7 @@ function f() {
 
     <script src="js/Chart.js"></script>
     <script>
-      Reveal.addEventListener("chart", function () {
+      Reveal.addEventListener("ready", function () {
         var addChart = function(id, data, options) {
           var chartOptions = {
             responsive: true,
@@ -1535,8 +1654,10 @@ function f() {
             }
           }
 
-          var ctx = document.getElementById(id).getContext("2d");
-          return new Chart(ctx).Bar(data, chartOptions);
+          Reveal.addEventListener(id, function () {
+            var ctx = document.getElementById(id).getContext("2d");
+            return new Chart(ctx).Bar(data, chartOptions);
+          });
         };
 
         addChart("phpdoc-chart",
